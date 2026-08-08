@@ -59,7 +59,7 @@ header {
 }
 
 .logo span {
-    color: #d4af37;
+    color: #6D28D9;
 }
 
 nav {
@@ -74,13 +74,13 @@ nav a {
 }
 
 nav a:hover {
-    color: #f0c75e;
+    color: #8B5CF6;
 }
 
 .cart-button {
     border: none;
-    background: #d4af37;
-    color: #080808;
+    background: #6D28D9;
+    color: white;
 
     padding: 11px 16px;
 
@@ -92,7 +92,7 @@ nav a:hover {
 }
 
 .cart-button:hover {
-    background: #f0c75e;
+    background: #8B5CF6;
 }
 
 
@@ -114,7 +114,7 @@ nav a:hover {
     background:
         radial-gradient(
             circle,
-            #3d3010,
+            #241044,
             #080808 65%
         );
 }
@@ -125,7 +125,7 @@ nav a:hover {
 }
 
 .hero h1 span {
-    color: #f0c75e;
+    color: #8B5CF6;
 }
 
 .hero p {
@@ -139,8 +139,8 @@ nav a:hover {
 .button {
     display: inline-block;
 
-    background: #d4af37;
-    color: #080808;
+    background: #6D28D9;
+    color: white;
 
     padding: 14px 28px;
 
@@ -152,7 +152,7 @@ nav a:hover {
 }
 
 .button:hover {
-    background: #f0c75e;
+    background: #8B5CF6;
 }
 
 
@@ -210,7 +210,7 @@ section {
 .product:hover {
     transform: translateY(-5px);
 
-    border-color: #d4af37;
+    border-color: #6D28D9;
 }
 
 .product img {
@@ -236,7 +236,7 @@ section {
 }
 
 .price {
-    color: #f0c75e;
+    color: #8B5CF6;
 
     font-size: 21px;
 
@@ -296,9 +296,9 @@ section {
 
     border: none;
 
-    background: #d4af37;
+    background: #6D28D9;
 
-    color: #080808;
+    color: white;
 
     padding: 12px;
 
@@ -310,7 +310,7 @@ section {
 }
 
 .add-button:hover {
-    background: #f0c75e;
+    background: #8B5CF6;
 }
 
 .add-button:disabled {
@@ -388,7 +388,7 @@ footer {
 }
 
 footer span {
-    color: #d4af37;
+    color: #6D28D9;
 }
 
 
@@ -473,11 +473,11 @@ footer span {
 .remove-button {
     margin-top: 10px;
 
-    background: #d4af37;
+    background: #6D28D9;
 
     border: none;
 
-    color: #080808;
+    color: white;
 
     padding: 7px 10px;
 
@@ -487,7 +487,7 @@ footer span {
 }
 
 .remove-button:hover {
-    background: #f0c75e;
+    background: #8B5CF6;
 }
 
 .total {
@@ -1200,12 +1200,8 @@ function adicionarProduto(index) {
     }
 
 
-    /* DIMINUI ESTOQUE */
-
     produto.estoque[tamanho]--;
 
-
-    /* ADICIONA AO CARRINHO */
 
     carrinho.push({
 
@@ -1224,20 +1220,7 @@ function adicionarProduto(index) {
     });
 
 
-    /* ATUALIZA APENAS A QUANTIDADE DO CARRINHO */
-
     atualizarCarrinho();
-
-
-    /*
-       IMPORTANTE:
-
-       NÃO abre o carrinho
-       automaticamente.
-
-       O cliente continua
-       na página.
-    */
 
 }
 
@@ -1387,16 +1370,12 @@ function removerProduto(index) {
         carrinho[index];
 
 
-    /* DEVOLVE AO ESTOQUE */
-
     produtos[
         produto.produtoIndex
     ].estoque[
         produto.tamanho
     ]++;
 
-
-    /* REMOVE DO CARRINHO */
 
     carrinho.splice(
         index,
@@ -1522,3 +1501,4 @@ mostrarProdutos();
 
 </html>
 ```
+
