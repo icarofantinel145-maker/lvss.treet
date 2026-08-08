@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lvss.treet | Streetwear</title>
+    <title>Lvss.treet | Official Store</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', Arial, sans-serif;
         }
 
         html {
@@ -17,8 +17,8 @@
         }
 
         body {
-            background: #000000;
-            color: #ffffff;
+            background-color: #050505;
+            color: #FFFFFF;
         }
 
         /* CABEÇALHO */
@@ -26,8 +26,8 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: #0a0a0a;
-            border-bottom: 1px solid #d4af37;
+            background: #000000;
+            border-bottom: 1px solid #D4AF37;
             padding: 15px 6%;
             display: flex;
             align-items: center;
@@ -38,23 +38,24 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            text-decoration: none;
         }
 
         .logo-img {
-            height: 45px;
+            height: 48px;
             width: auto;
             object-fit: contain;
         }
 
         .logo-text {
             font-size: 24px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: #ffffff;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: #FFFFFF;
         }
 
         .logo-text span {
-            color: #d4af37;
+            color: #D4AF37;
         }
 
         nav {
@@ -63,88 +64,90 @@
         }
 
         nav a {
-            color: #ffffff;
+            color: #FFFFFF;
             text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            font-size: 14px;
-            letter-spacing: 1px;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #d4af37;
+            color: #D4AF37;
         }
 
         .cart-button {
-            border: 1px solid #d4af37;
-            background: #d4af37;
+            border: 1px solid #D4AF37;
+            background: #D4AF37;
             color: #000000;
             padding: 10px 18px;
             border-radius: 4px;
             cursor: pointer;
-            font-weight: 700;
-            transition: 0.3s;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
         }
 
         .cart-button:hover {
-            background: #b38f28;
-            border-color: #b38f28;
-            color: #ffffff;
+            background: transparent;
+            color: #D4AF37;
         }
 
-        /* INÍCIO */
+        /* BANNER PRINCIPAL */
         .hero {
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 30px;
-            background: radial-gradient(circle, #1a1813 0%, #000000 70%);
+            padding: 40px 20px;
+            background: radial-gradient(circle, #1a160d 0%, #050505 80%);
             border-bottom: 1px solid #1a1a1a;
         }
 
         .hero-logo {
-            max-width: 200px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0px 0px 10px rgba(212, 175, 55, 0.2));
+            max-width: 180px;
+            margin-bottom: 25px;
+            filter: drop-shadow(0px 0px 12px rgba(212, 175, 55, 0.25));
         }
 
         .hero h1 {
-            font-size: clamp(40px, 8vw, 80px);
-            letter-spacing: 6px;
-            color: #ffffff;
+            font-size: clamp(38px, 7vw, 75px);
+            letter-spacing: 5px;
             font-weight: 900;
+            color: #FFFFFF;
         }
 
         .hero h1 span {
-            color: #d4af37;
+            color: #D4AF37;
         }
 
         .hero p {
-            color: #cccccc;
+            color: #AAAAAA;
             margin: 15px 0 35px;
-            font-size: 16px;
-            letter-spacing: 3px;
+            font-size: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
         }
 
         .button {
             display: inline-block;
-            background: #d4af37;
+            background: #D4AF37;
             color: #000000;
             padding: 14px 32px;
             border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            border: 1px solid #d4af37;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            border: 1px solid #D4AF37;
+            text-transform: uppercase;
         }
 
         .button:hover {
             background: transparent;
-            color: #d4af37;
+            color: #D4AF37;
         }
 
         /* SEÇÕES */
@@ -158,17 +161,17 @@
         }
 
         .title h2 {
-            font-size: 36px;
-            letter-spacing: 2px;
-            color: #ffffff;
+            font-size: 32px;
+            letter-spacing: 3px;
+            font-weight: 800;
         }
 
         .title p {
-            color: #d4af37;
+            color: #D4AF37;
             margin-top: 8px;
+            font-size: 13px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            font-size: 14px;
-            letter-spacing: 1px;
         }
 
         /* PRODUTOS */
@@ -179,17 +182,20 @@
         }
 
         .product {
-            background: #0a0a0a;
-            border: 1px solid #222222;
+            background: #0d0d0d;
+            border: 1px solid #1f1f1f;
             border-radius: 8px;
             overflow: hidden;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .product:hover {
-            transform: translateY(-7px);
-            border-color: #d4af37;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.15);
+            transform: translateY(-6px);
+            border-color: #D4AF37;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.12);
         }
 
         .product img {
@@ -197,45 +203,53 @@
             height: 320px;
             object-fit: cover;
             display: block;
+            border-bottom: 1px solid #1f1f1f;
         }
 
         .product-info {
-            padding: 22px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
         }
 
         .product-info h3 {
-            margin-bottom: 8px;
             font-size: 18px;
-            color: #ffffff;
+            margin-bottom: 8px;
+            color: #FFFFFF;
+            font-weight: 700;
         }
 
         .product-info p {
             color: #888888;
+            font-size: 13px;
             margin-bottom: 15px;
-            font-size: 14px;
+            line-height: 1.4;
         }
 
         .price {
-            color: #d4af37;
+            color: #D4AF37;
             font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 18px;
+            font-weight: 800;
+            margin-bottom: 15px;
         }
 
         .add-button {
             width: 100%;
-            border: 1px solid #d4af37;
+            border: 1px solid #D4AF37;
             background: transparent;
-            color: #d4af37;
+            color: #D4AF37;
             padding: 12px;
             border-radius: 4px;
             cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
+            font-weight: 800;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
         }
 
         .add-button:hover {
-            background: #d4af37;
+            background: #D4AF37;
             color: #000000;
         }
 
@@ -248,11 +262,11 @@
         }
 
         .about p {
-            max-width: 700px;
-            margin: auto;
-            color: #cccccc;
+            max-width: 650px;
+            margin: 0 auto;
+            color: #CCCCCC;
             line-height: 1.8;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         /* CONTATO */
@@ -265,43 +279,43 @@
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         .whatsapp {
-            background: #25d366;
-            color: #ffffff;
-            border: none;
+            background: #25D366;
+            color: #FFFFFF;
+            border-color: #25D366;
         }
 
         .whatsapp:hover {
-            background: #1eb856;
-            color: #ffffff;
+            background: transparent;
+            color: #25D366;
         }
 
         .instagram {
-            background: #e1306c;
-            color: #ffffff;
-            border: none;
+            background: #E1306C;
+            color: #FFFFFF;
+            border-color: #E1306C;
         }
 
         .instagram:hover {
-            background: #c9265c;
-            color: #ffffff;
+            background: transparent;
+            color: #E1306C;
         }
 
         /* RODAPÉ */
         footer {
             border-top: 1px solid #1a1a1a;
-            padding: 35px;
+            padding: 30px;
             text-align: center;
-            color: #666666;
-            font-size: 14px;
+            color: #555555;
+            font-size: 13px;
         }
 
         footer span {
-            color: #d4af37;
-            font-weight: bold;
+            color: #D4AF37;
+            font-weight: 700;
         }
 
         /* CARRINHO */
@@ -314,10 +328,12 @@
             height: 100vh;
             background: #0a0a0a;
             z-index: 2000;
-            padding: 30px;
-            transition: 0.4s;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
-            border-left: 1px solid #d4af37;
+            padding: 25px;
+            transition: right 0.4s ease;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.9);
+            border-left: 1px solid #D4AF37;
+            display: flex;
+            flex-direction: column;
         }
 
         .cart.open {
@@ -329,77 +345,77 @@
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid #222222;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
         }
 
         .close-button {
             background: none;
             border: none;
-            color: #ffffff;
-            font-size: 32px;
+            color: #FFFFFF;
+            font-size: 28px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: color 0.3s;
         }
 
         .close-button:hover {
-            color: #d4af37;
+            color: #D4AF37;
         }
 
         .cart-items {
             margin-top: 20px;
-            max-height: 55vh;
+            flex-grow: 1;
             overflow-y: auto;
         }
 
         .cart-item {
-            background: #141414;
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 12px;
+            background: #121212;
+            padding: 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
             border: 1px solid #222222;
         }
 
         .remove-button {
-            margin-top: 10px;
+            margin-top: 8px;
             background: #ff3333;
             border: none;
-            color: #ffffff;
-            padding: 6px 12px;
-            border-radius: 4px;
+            color: #FFFFFF;
+            padding: 5px 10px;
+            border-radius: 3px;
             cursor: pointer;
-            font-size: 12px;
-            font-weight: bold;
+            font-size: 11px;
+            font-weight: 700;
         }
 
         .total {
-            margin-top: 25px;
-            font-size: 22px;
-            font-weight: bold;
-            color: #ffffff;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 800;
+            color: #FFFFFF;
         }
 
         .total span {
-            color: #d4af37;
+            color: #D4AF37;
         }
 
         .checkout {
             width: 100%;
-            margin-top: 20px;
-            padding: 16px;
-            background: #d4af37;
+            margin-top: 15px;
+            padding: 15px;
+            background: #D4AF37;
             color: #000000;
-            border: none;
+            border: 1px solid #D4AF37;
             border-radius: 4px;
             cursor: pointer;
-            font-weight: bold;
-            font-size: 15px;
+            font-weight: 900;
+            font-size: 14px;
             letter-spacing: 1px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .checkout:hover {
-            background: #b38f28;
-            color: #ffffff;
+            background: transparent;
+            color: #D4AF37;
         }
 
         /* CELULAR */
@@ -417,7 +433,7 @@
             }
 
             .title h2 {
-                font-size: 28px;
+                font-size: 26px;
             }
 
             .cart {
@@ -426,16 +442,13 @@
         }
     </style>
 </head>
-
 <body>
 
     <!-- CABEÇALHO -->
     <header>
         <div class="logo-container">
-            <img src="image_4ee77f.png" alt="Lvss.treet Logo" class="logo-img">
-            <div class="logo-text">
-                Lvss<span>.treet</span>
-            </div>
+            <img src="image_4ee77f.png" alt="Lvss.treet" class="logo-img">
+            <div class="logo-text">Lvss<span>.treet</span></div>
         </div>
 
         <nav>
@@ -450,21 +463,21 @@
         </button>
     </header>
 
-    <!-- INÍCIO -->
+    <!-- BANNER PRINCIPAL -->
     <section class="hero" id="inicio">
         <div>
             <img src="image_4ee77f.png" alt="Lvss.treet Emblem" class="hero-logo">
             <h1>LVSS<span>.TREET</span></h1>
-            <p>STREETWEAR • ATITUDE • PERSONALIDADE</p>
-            <a href="#produtos" class="button">VER PRODUTOS</a>
+            <p>Streetwear • Atitude • Personalidade</p>
+            <a href="#produtos" class="button">Ver Produtos</a>
         </div>
     </section>
 
     <!-- PRODUTOS -->
     <section id="produtos">
         <div class="title">
-            <h2>NOSSOS PRODUTOS</h2>
-            <p>Confira nossa coleção exclusiva</p>
+            <h2>Nossas Peças</h2>
+            <p>Coleção Exclusiva</p>
         </div>
 
         <div class="products" id="listaProdutos"></div>
@@ -473,7 +486,7 @@
     <!-- SOBRE -->
     <section class="about" id="sobre">
         <div class="title">
-            <h2>SOBRE A LVSS.TREET</h2>
+            <h2>Sobre a Lvss.treet</h2>
         </div>
         <p>
             A Lvss.treet nasceu com a ideia de criar uma marca streetwear com atitude, personalidade e estilo próprio.
@@ -483,15 +496,15 @@
     <!-- CONTATO -->
     <section class="contact" id="contato">
         <div class="title">
-            <h2>FALE CONOSCO</h2>
-            <p>Entre em contato com a Lvss.treet.</p>
+            <h2>Fale Conosco</h2>
+            <p>Entre em contato com a nossa equipe</p>
         </div>
 
         <div class="contact-buttons">
-            <a id="whatsapp" class="button whatsapp" target="_blank">
+            <a id="whatsapp" class="button whatsapp" target="_blank" rel="noopener noreferrer">
                 📱 WHATSAPP
             </a>
-            <a id="instagram" class="button instagram" target="_blank">
+            <a id="instagram" class="button instagram" target="_blank" rel="noopener noreferrer">
                 📸 INSTAGRAM
             </a>
         </div>
@@ -527,37 +540,37 @@
         const whatsappNumero = "554991221247";
         const instagramNome = "lvss.treet";
 
-        /* PRODUTOS UTILIZANDO AS IMAGENS FORNECIDAS */
+        /* PRODUTOS (USANDO SUAS IMAGENS) */
         const produtos = [
             {
                 nome: "Camiseta Lvss Black",
-                descricao: "Camiseta oversized preta com acabamento premium.",
+                descricao: "Camiseta oversized preta.",
                 preco: 89.90,
                 imagem: "image_4eeb06.png"
             },
             {
                 nome: "Camiseta Lvss Purple",
-                descricao: "Edição especial estampada e com caimento exclusivo.",
+                descricao: "Edição especial estampada.",
                 preco: 99.90,
                 imagem: "image_4eeb5d.png"
             },
             {
                 nome: "Moletom Lvss",
-                descricao: "Moletom balaclava / kit streetwear de alta qualidade.",
+                descricao: "Moletom streetwear com balaclava.",
                 preco: 159.90,
                 imagem: "image_4eeb3a.png"
             },
             {
                 nome: "Tênis Lvss Street",
-                descricao: "Tênis de edição limitada para completar o visual.",
+                descricao: "Tênis para completar o visual.",
                 preco: 249.90,
-                imagem: "https://placehold.co/600x600/101010/d4af37?text=LVSS+SNEAKER"
+                imagem: "image_4eeb06.png"
             }
         ];
 
         let carrinho = [];
 
-        /* MOSTRAR PRODUTOS */
+        /* RENDERIZAR PRODUTOS */
         function mostrarProdutos() {
             const lista = document.getElementById("listaProdutos");
             lista.innerHTML = "";
@@ -567,12 +580,16 @@
                     <div class="product">
                         <img src="${produto.imagem}" alt="${produto.nome}">
                         <div class="product-info">
-                            <h3>${produto.nome}</h3>
-                            <p>${produto.descricao}</p>
-                            <div class="price">R$ ${produto.preco.toFixed(2).replace(".", ",")}</div>
-                            <button class="add-button" onclick="adicionarProduto(${index})">
-                                ADICIONAR AO CARRINHO
-                            </button>
+                            <div>
+                                <h3>${produto.nome}</h3>
+                                <p>${produto.descricao}</p>
+                            </div>
+                            <div>
+                                <div class="price">R$ ${produto.preco.toFixed(2).replace(".", ",")}</div>
+                                <button class="add-button" onclick="adicionarProduto(${index})">
+                                    ADICIONAR AO CARRINHO
+                                </button>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -614,7 +631,7 @@
                 total += produto.preco;
                 lista.innerHTML += `
                     <div class="cart-item">
-                        <strong>${produto.nome}</strong><br><br>
+                        <strong>${produto.nome}</strong><br>
                         R$ ${produto.preco.toFixed(2).replace(".", ",")}<br>
                         <button class="remove-button" onclick="removerProduto(${index})">
                             REMOVER
@@ -631,31 +648,32 @@
             atualizarCarrinho();
         }
 
-        /* FINALIZAR PEDIDO VIA WHATSAPP */
+        /* FINALIZAR VIA WHATSAPP (SINTAXE CORRIGIDA) */
         function finalizarPedido() {
             if (carrinho.length === 0) {
                 alert("Seu carrinho está vazio!");
                 return;
             }
 
-            let mensagem = "Olá! Quero fazer um pedido na Lvss.treet.%0A%0A";
+            let textoPedido = "Olá! Quero fazer um pedido na Lvss.treet:\n\n";
             let total = 0;
 
             carrinho.forEach(produto => {
-                mensagem += `• ${produto.nome} - R$ ${produto.preco.toFixed(2).replace(".", ",")}%0A`;
+                textoPedido += `• ${produto.nome} - R$ ${produto.preco.toFixed(2).replace(".", ",")}\n`;
                 total += produto.preco;
             });
 
-            mensagem += `%0A*Total: R$ ${total.toFixed(2).replace(".", ",")}*`;
+            textoPedido += `\n*Total: R$ ${total.toFixed(2).replace(".", ",")}*`;
 
-            window.open(`https://wa.me/${whatsappNumero}?text=${mensagem}`, "_blank");
+            const linkWhatsapp = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(textoPedido)}`;
+            window.open(linkWhatsapp, "_blank");
         }
 
-        /* REDES SOCIAIS */
+        /* LINKS SOCIAIS */
         document.getElementById("instagram").href = `https://www.instagram.com/${instagramNome}/`;
         document.getElementById("whatsapp").href = `https://wa.me/${whatsappNumero}`;
 
-        /* INICIALIZAÇÃO */
+        /* INICIALIZAR */
         mostrarProdutos();
     </script>
 </body>
