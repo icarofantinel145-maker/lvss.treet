@@ -1,0 +1,1098 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lvss.treet</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080808;
+    color:white;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:#080808;
+    border-bottom:1px solid #292929;
+
+    padding:18px 6%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#8b35ff;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#9d5cff;
+}
+
+.cart-button{
+    border:none;
+    background:#8b35ff;
+    color:white;
+    padding:11px 17px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.cart-button:hover{
+    background:#a765ff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:78vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    padding:30px;
+
+    background:
+    radial-gradient(
+        circle,
+        #42106d,
+        #080808 65%
+    );
+}
+
+.hero h1{
+    font-size:clamp(50px,9vw,100px);
+    letter-spacing:5px;
+    font-weight:900;
+}
+
+.hero h1 span{
+    color:#9d5cff;
+}
+
+.hero p{
+    color:#aaa;
+    margin:20px 0 30px;
+    font-size:18px;
+}
+
+.button{
+    display:inline-block;
+    background:#8b35ff;
+    color:white;
+    padding:14px 30px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.button:hover{
+    background:#a765ff;
+}
+
+/* SEÇÕES */
+
+section{
+    padding:75px 6%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:40px;
+}
+
+.title p{
+    color:#999;
+    margin-top:10px;
+}
+
+/* PRODUTOS */
+
+.products{
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(230px,1fr)
+    );
+
+    gap:25px;
+}
+
+.product{
+    background:#111;
+
+    border:1px solid #292929;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-7px);
+
+    border-color:#8b35ff;
+
+    box-shadow:
+    0 10px 30px
+    rgba(139,53,255,.15);
+}
+
+.product img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h3{
+    margin-bottom:8px;
+}
+
+.product-info p{
+    color:#999;
+    margin-bottom:12px;
+}
+
+.price{
+    color:#a765ff;
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.add-button{
+    width:100%;
+
+    border:none;
+
+    background:#8b35ff;
+
+    color:white;
+
+    padding:12px;
+
+    border-radius:7px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.add-button:hover{
+    background:#a765ff;
+}
+
+/* SOBRE */
+
+.about{
+    background:#0e0e0e;
+    text-align:center;
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+    color:#aaa;
+    line-height:1.7;
+}
+
+/* CONTATO */
+
+.contact{
+    text-align:center;
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.whatsapp{
+    background:#25d366;
+}
+
+.instagram{
+    background:#e1306c;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #292929;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#777;
+}
+
+footer span{
+    color:#9d5cff;
+}
+
+/* CARRINHO */
+
+.cart{
+    position:fixed;
+
+    top:0;
+    right:-420px;
+
+    width:400px;
+    max-width:100%;
+
+    height:100vh;
+
+    background:#111;
+
+    z-index:2000;
+
+    padding:25px;
+
+    transition:.4s;
+
+    box-shadow:
+    -10px 0 30px
+    rgba(0,0,0,.5);
+}
+
+.cart.open{
+    right:0;
+}
+
+.cart-header{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-bottom:1px solid #333;
+
+    padding-bottom:15px;
+}
+
+.close-button{
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
+.cart-items{
+    margin-top:20px;
+
+    max-height:55vh;
+
+    overflow-y:auto;
+}
+
+.cart-item{
+    background:#1b1b1b;
+
+    padding:15px;
+
+    border-radius:8px;
+
+    margin-bottom:10px;
+}
+
+.remove-button{
+    margin-top:10px;
+
+    background:#8b35ff;
+
+    color:white;
+
+    border:none;
+
+    padding:7px 10px;
+
+    border-radius:5px;
+
+    cursor:pointer;
+}
+
+.total{
+    margin-top:20px;
+
+    font-size:22px;
+
+    font-weight:bold;
+}
+
+.checkout{
+    width:100%;
+
+    margin-top:20px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:7px;
+
+    background:#25d366;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+/* CELULAR */
+
+@media(max-width:700px){
+
+    nav{
+        display:none;
+    }
+
+    header{
+        padding:18px 5%;
+    }
+
+    section{
+        padding:60px 5%;
+    }
+
+    .title h2{
+        font-size:30px;
+    }
+
+    .cart{
+        width:100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        Lvss<span>.treet</span>
+    </div>
+
+    <nav>
+
+        <a href="#inicio">
+            Início
+        </a>
+
+        <a href="#produtos">
+            Produtos
+        </a>
+
+        <a href="#sobre">
+            Sobre
+        </a>
+
+        <a href="#contato">
+            Contato
+        </a>
+
+    </nav>
+
+    <button
+        class="cart-button"
+        onclick="abrirCarrinho()">
+
+        🛒 Carrinho
+        (<span id="quantidade">0</span>)
+
+    </button>
+
+</header>
+
+
+<!-- INÍCIO -->
+
+<section
+    class="hero"
+    id="inicio">
+
+    <div>
+
+        <h1>
+            LVSS<span>.TREET</span>
+        </h1>
+
+        <p>
+            STREETWEAR • ATITUDE • PERSONALIDADE
+        </p>
+
+        <a
+            href="#produtos"
+            class="button">
+
+            VER PRODUTOS
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUTOS -->
+
+<section id="produtos">
+
+    <div class="title">
+
+        <h2>
+            NOSSOS PRODUTOS
+        </h2>
+
+        <p>
+            Confira nossa coleção.
+        </p>
+
+    </div>
+
+    <div
+        class="products"
+        id="listaProdutos">
+
+    </div>
+
+</section>
+
+
+<!-- SOBRE -->
+
+<section
+    class="about"
+    id="sobre">
+
+    <div class="title">
+
+        <h2>
+            SOBRE A LVSS.TREET
+        </h2>
+
+    </div>
+
+    <p>
+
+        A Lvss.treet nasceu com a ideia
+        de criar uma marca streetwear
+        com atitude, personalidade
+        e estilo próprio.
+
+    </p>
+
+</section>
+
+
+<!-- CONTATO -->
+
+<section
+    class="contact"
+    id="contato">
+
+    <div class="title">
+
+        <h2>
+            FALE CONOSCO
+        </h2>
+
+        <p>
+            Entre em contato com a Lvss.treet.
+        </p>
+
+    </div>
+
+    <div class="contact-buttons">
+
+        <a
+            id="whatsapp"
+            class="button whatsapp"
+            target="_blank">
+
+            📱 WHATSAPP
+
+        </a>
+
+        <a
+            id="instagram"
+            class="button instagram"
+            target="_blank">
+
+            📸 INSTAGRAM
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026
+
+    <span>
+        Lvss.treet
+    </span>
+
+    — Todos os direitos reservados.
+
+</footer>
+
+
+<!-- CARRINHO -->
+
+<div
+    class="cart"
+    id="carrinho">
+
+    <div class="cart-header">
+
+        <h2>
+            Carrinho
+        </h2>
+
+        <button
+            class="close-button"
+            onclick="fecharCarrinho()">
+
+            ×
+
+        </button>
+
+    </div>
+
+    <div
+        class="cart-items"
+        id="itensCarrinho">
+
+        <p
+            style="color:#999;margin-top:20px;">
+
+            Seu carrinho está vazio.
+
+        </p>
+
+    </div>
+
+    <div class="total">
+
+        Total:
+
+        R$
+
+        <span id="total">
+            0,00
+        </span>
+
+    </div>
+
+    <button
+        class="checkout"
+        onclick="finalizarPedido()">
+
+        📲 FINALIZAR PEDIDO
+
+    </button>
+
+</div>
+
+
+<script>
+
+/* ================================
+   INFORMAÇÕES DA LOJA
+================================ */
+
+
+/* WHATSAPP */
+
+const whatsappNumero =
+"554991221247";
+
+
+/* INSTAGRAM */
+
+const instagramNome =
+"lvss.treet";
+
+
+/* ================================
+   PRODUTOS
+================================ */
+
+const produtos = [
+
+    {
+
+        nome:
+        "Camiseta Lvss Black",
+
+        descricao:
+        "Camiseta oversized preta.",
+
+        preco:
+        89.90,
+
+        imagem:
+        "https://placehold.co/600x600/111111/ffffff?text=LVSS+BLACK"
+
+    },
+
+    {
+
+        nome:
+        "Camiseta Lvss Purple",
+
+        descricao:
+        "Edição especial roxa.",
+
+        preco:
+        99.90,
+
+        imagem:
+        "https://placehold.co/600x600/35105c/ffffff?text=LVSS+PURPLE"
+
+    },
+
+    {
+
+        nome:
+        "Moletom Lvss",
+
+        descricao:
+        "Moletom streetwear.",
+
+        preco:
+        159.90,
+
+        imagem:
+        "https://placehold.co/600x600/181818/ffffff?text=LVSS+HOODIE"
+
+    },
+
+    {
+
+        nome:
+        "Tênis Lvss Street",
+
+        descricao:
+        "Tênis para completar o visual.",
+
+        preco:
+        249.90,
+
+        imagem:
+        "https://placehold.co/600x600/252525/ffffff?text=LVSS+SNEAKER"
+
+    }
+
+];
+
+
+/* ================================
+   CARRINHO
+================================ */
+
+let carrinho = [];
+
+
+/* MOSTRAR PRODUTOS */
+
+function mostrarProdutos(){
+
+    const lista =
+    document.getElementById(
+        "listaProdutos"
+    );
+
+    lista.innerHTML = "";
+
+
+    produtos.forEach(
+
+        function(produto,index){
+
+            lista.innerHTML += `
+
+                <div class="product">
+
+                    <img
+                        src="${produto.imagem}"
+                        alt="${produto.nome}"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            ${produto.nome}
+                        </h3>
+
+                        <p>
+                            ${produto.descricao}
+                        </p>
+
+                        <div class="price">
+
+                            R$
+
+                            ${produto.preco
+                                .toFixed(2)
+                                .replace(".",",")}
+
+                        </div>
+
+                        <button
+                            class="add-button"
+                            onclick="adicionarProduto(${index})">
+
+                            ADICIONAR AO CARRINHO
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+    );
+
+}
+
+
+/* ABRIR */
+
+function abrirCarrinho(){
+
+    document
+    .getElementById("carrinho")
+    .classList
+    .add("open");
+
+}
+
+
+/* FECHAR */
+
+function fecharCarrinho(){
+
+    document
+    .getElementById("carrinho")
+    .classList
+    .remove("open");
+
+}
+
+
+/* ADICIONAR */
+
+function adicionarProduto(index){
+
+    carrinho.push(
+        produtos[index]
+    );
+
+    atualizarCarrinho();
+
+    abrirCarrinho();
+
+}
+
+
+/* ATUALIZAR */
+
+function atualizarCarrinho(){
+
+    const lista =
+    document.getElementById(
+        "itensCarrinho"
+    );
+
+    const quantidade =
+    document.getElementById(
+        "quantidade"
+    );
+
+    const totalElemento =
+    document.getElementById(
+        "total"
+    );
+
+
+    quantidade.textContent =
+    carrinho.length;
+
+
+    if(carrinho.length === 0){
+
+        lista.innerHTML = `
+
+            <p
+                style="color:#999;margin-top:20px;">
+
+                Seu carrinho está vazio.
+
+            </p>
+
+        `;
+
+        totalElemento.textContent =
+        "0,00";
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+    lista.innerHTML = "";
+
+
+    carrinho.forEach(
+
+        function(produto,index){
+
+            total +=
+            produto.preco;
+
+
+            lista.innerHTML += `
+
+                <div class="cart-item">
+
+                    <strong>
+                        ${produto.nome}
+                    </strong>
+
+                    <br><br>
+
+                    R$
+
+                    ${produto.preco
+                        .toFixed(2)
+                        .replace(".",",")}
+
+                    <br>
+
+                    <button
+                        class="remove-button"
+                        onclick="removerProduto(${index})">
+
+                        REMOVER
+
+                    </button>
+
+                </div>
+
+            `;
+
+        }
+
+    );
+
+
+    totalElemento.textContent =
+    total
+    .toFixed(2)
+    .replace(".",",");
+
+}
+
+
+/* REMOVER */
+
+function removerProduto(index){
+
+    carrinho.splice(
+        index,
+        1
+    );
+
+    atualizarCarrinho();
+
+}
+
+
+/* FINALIZAR PEDIDO */
+
+function finalizarPedido(){
+
+    if(carrinho.length === 0){
+
+        alert(
+            "Seu carrinho está vazio!"
+        );
+
+        return;
+
+    }
+
+
+    let mensagem =
+    "Olá! Quero fazer um pedido na Lvss.treet.%0A%0A";
+
+
+    let total = 0;
+
+
+    carrinho.forEach(
+
+        function(produto){
+
+            mensagem +=
+
+            "• " +
+            produto.nome +
+            " - R$ " +
+            produto.preco
+            .toFixed(2)
+            .replace(".",",") +
+            "%0A";
+
+
+            total +=
+            produto.preco;
+
+        }
+
+    );
+
+
+    mensagem +=
+
+    "%0A*Total: R$ " +
+
+    total
+    .toFixed(2)
+    .replace(".",",") +
+
+    "*";
+
+
+    window.open(
+
+        "https://wa.me/" +
+
+        whatsappNumero +
+
+        "?text=" +
+
+        mensagem,
+
+        "_blank"
+
+    );
+
+}
+
+
+/* INSTAGRAM */
+
+document.getElementById(
+    "instagram"
+).href =
+
+"https://www.instagram.com/" +
+
+instagramNome +
+
+"/";
+
+
+/* WHATSAPP */
+
+document.getElementById(
+    "whatsapp"
+).href =
+
+"https://wa.me/" +
+
+whatsappNumero;
+
+
+/* INICIAR SITE */
+
+mostrarProdutos();
+
+</script>
+
+</body>
+</html>
+```
