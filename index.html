@@ -3,1576 +3,932 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lvss.treet | Streetwear</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #070707;
+            color: #ffffff;
+        }
 
-<meta charset="UTF-8">
+        /* =========================
+           CORES
+        ========================= */
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        :root {
+            --roxo: #7b2cff;
+            --roxo-escuro: #4b1599;
+            --roxo-claro: #a66cff;
+            --preto: #070707;
+            --card: #111111;
+            --cinza: #999999;
+            --borda: #292929;
+            --branco: #ffffff;
+            --verde: #25d366;
+            --vermelho: #ff3b3b;
+        }
+
+
+        /* =========================
+           CABEÇALHO
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(7, 7, 7, 0.96);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid var(--borda);
+
+            padding: 18px 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-<meta name="description" content="Lvss.treet - Streetwear, atitude e personalidade.">
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
 
-<title>Lvss.treet | Streetwear</title>
+        .logo span {
+            color: var(--roxo);
+        }
 
+        nav {
+            display: flex;
+            gap: 25px;
+        }
 
-<style>
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
 
-/* =========================================================
-   RESET
-========================================================= */
+        nav a:hover {
+            color: var(--roxo-claro);
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        .cart-button {
+            border: none;
+            background: var(--roxo);
+            color: white;
 
-html {
-    scroll-behavior: smooth;
-}
+            padding: 11px 16px;
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #080808;
-    color: #ffffff;
-    overflow-x: hidden;
-}
+            border-radius: 8px;
 
-button,
-input,
-select {
-    font-family: inherit;
-}
+            cursor: pointer;
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
+            font-weight: bold;
 
+            transition: 0.2s;
+        }
 
-/* =========================================================
-   CORES
-========================================================= */
+        .cart-button:hover {
+            background: var(--roxo-claro);
+            transform: translateY(-2px);
+        }
 
-:root {
 
-    --roxo: #6D28D9;
-    --roxo-claro: #8B5CF6;
-    --roxo-escuro: #241044;
+        /* =========================
+           HERO
+        ========================= */
 
-    --fundo: #080808;
-    --fundo-2: #0e0e0e;
-    --card: #111111;
-    --card-2: #1a1a1a;
+        .hero {
+            min-height: 78vh;
 
-    --borda: #292929;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    --texto: #ffffff;
-    --cinza: #999999;
+            text-align: center;
 
-    --verde: #25D366;
-    --vermelho: #ef4444;
-}
+            padding: 40px 20px;
 
+            background:
+                radial-gradient(
+                    circle at center,
+                    #35106b 0%,
+                    #160827 30%,
+                    #070707 70%
+                );
+        }
 
-/* =========================================================
-   SCROLLBAR
-========================================================= */
+        .hero h1 {
+            font-size: clamp(50px, 9vw, 105px);
+            letter-spacing: 5px;
+            font-weight: 900;
+        }
 
-::-webkit-scrollbar {
-    width: 8px;
-}
+        .hero h1 span {
+            color: var(--roxo);
+        }
 
-::-webkit-scrollbar-track {
-    background: #080808;
-}
+        .hero p {
+            color: #bdbdbd;
+            margin: 20px 0 30px;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
 
-::-webkit-scrollbar-thumb {
-    background: var(--roxo);
-    border-radius: 10px;
-}
+        .button {
+            display: inline-block;
 
+            background: var(--roxo);
+            color: white;
 
-/* =========================================================
-   HEADER
-========================================================= */
+            padding: 14px 28px;
 
-header {
+            border-radius: 8px;
 
-    position: sticky;
+            text-decoration: none;
 
-    top: 0;
+            font-weight: bold;
 
-    z-index: 1000;
+            transition: 0.2s;
+        }
 
-    background: rgba(8, 8, 8, 0.96);
+        .button:hover {
+            background: var(--roxo-claro);
+            transform: translateY(-2px);
+        }
 
-    backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid var(--borda);
+        /* =========================
+           SEÇÕES
+        ========================= */
 
-    padding: 16px 6%;
+        section {
+            padding: 80px 6%;
+        }
 
-    display: flex;
+        .title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
 
-    align-items: center;
+        .title h2 {
+            font-size: 38px;
+        }
 
-    justify-content: space-between;
+        .title p {
+            color: var(--cinza);
+            margin-top: 10px;
+        }
 
-    gap: 20px;
-}
 
-.logo {
+        /* =========================
+           PRODUTOS
+        ========================= */
 
-    color: white;
+        .products {
+            display: grid;
 
-    font-size: 27px;
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
 
-    font-weight: 900;
+            gap: 25px;
+        }
 
-    letter-spacing: -1px;
+        .product {
+            background: var(--card);
 
-    text-decoration: none;
-}
+            border: 1px solid var(--borda);
 
-.logo span {
-    color: var(--roxo-claro);
-}
+            border-radius: 12px;
 
-nav {
+            overflow: hidden;
 
-    display: flex;
+            transition: 0.3s;
+        }
 
-    gap: 25px;
-}
+        .product:hover {
+            transform: translateY(-6px);
+            border-color: var(--roxo);
+            box-shadow: 0 10px 30px rgba(123, 44, 255, 0.12);
+        }
 
-nav a {
+        .product img {
+            width: 100%;
+            height: 300px;
 
-    color: white;
+            object-fit: cover;
 
-    text-decoration: none;
+            display: block;
 
-    font-size: 14px;
+            background: #181818;
+        }
 
-    font-weight: bold;
+        .product-info {
+            padding: 20px;
+        }
 
-    transition: 0.2s;
-}
+        .product-info h3 {
+            margin-bottom: 8px;
+            font-size: 19px;
+        }
 
-nav a:hover {
-    color: var(--roxo-claro);
-}
+        .product-info p {
+            color: var(--cinza);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
 
-.cart-button {
+        .price {
+            color: var(--roxo-claro);
 
-    border: none;
+            font-size: 22px;
 
-    background: var(--roxo);
+            font-weight: bold;
 
-    color: white;
+            margin-bottom: 16px;
+        }
 
-    padding: 11px 16px;
 
-    border-radius: 8px;
+        /* =========================
+           TAMANHOS
+        ========================= */
 
-    cursor: pointer;
+        .size-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
 
-    font-weight: bold;
+        .sizes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 15px;
+        }
 
-    transition: 0.2s;
+        .size-button {
+            background: #1b1b1b;
+            color: white;
 
-    white-space: nowrap;
-}
+            border: 1px solid #444;
 
-.cart-button:hover {
-    background: var(--roxo-claro);
-    transform: translateY(-1px);
-}
+            padding: 8px 13px;
 
+            border-radius: 6px;
 
-/* =========================================================
-   HERO
-========================================================= */
+            cursor: pointer;
 
-.hero {
+            font-weight: bold;
 
-    min-height: 78vh;
+            transition: 0.2s;
+        }
 
-    display: flex;
+        .size-button:hover {
+            border-color: var(--roxo);
+        }
 
-    align-items: center;
+        .size-button.selected {
+            background: var(--roxo);
+            border-color: var(--roxo);
+        }
 
-    justify-content: center;
+        .size-button.disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
 
-    text-align: center;
+        .stock {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 12px;
+        }
 
-    padding: 50px 20px;
 
-    background:
-        radial-gradient(
-            circle at center,
-            #241044 0%,
-            #10091b 30%,
-            #080808 70%
-        );
+        /* =========================
+           BOTÃO ADICIONAR
+        ========================= */
 
-    position: relative;
+        .add-button {
+            width: 100%;
 
-    overflow: hidden;
-}
+            border: none;
 
-.hero::before {
+            background: var(--roxo);
 
-    content: "";
+            color: white;
 
-    position: absolute;
+            padding: 12px;
 
-    width: 500px;
+            border-radius: 7px;
 
-    height: 500px;
+            cursor: pointer;
 
-    border-radius: 50%;
+            font-weight: bold;
 
-    background: var(--roxo);
+            transition: 0.2s;
+        }
 
-    filter: blur(180px);
+        .add-button:hover {
+            background: var(--roxo-claro);
+        }
 
-    opacity: 0.18;
-}
+        .add-button:disabled {
+            background: #333;
+            color: #777;
+            cursor: not-allowed;
+        }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-}
 
-.hero h1 {
+        /* =========================
+           SOBRE
+        ========================= */
 
-    font-size: clamp(50px, 10vw, 110px);
+        .about {
+            background: #0d0d0d;
+            text-align: center;
+        }
 
-    letter-spacing: 5px;
+        .about p {
+            max-width: 750px;
 
-    font-weight: 900;
-}
+            margin: auto;
 
-.hero h1 span {
-    color: var(--roxo-claro);
-}
+            color: #aaa;
 
-.hero p {
+            line-height: 1.8;
 
-    color: #aaa;
+            font-size: 16px;
+        }
 
-    margin: 20px 0 30px;
 
-    font-size: 17px;
+        /* =========================
+           CONTATO
+        ========================= */
 
-    letter-spacing: 2px;
-}
+        .contact {
+            text-align: center;
+        }
 
-.hero-buttons {
+        .contact-buttons {
+            display: flex;
 
-    display: flex;
+            justify-content: center;
 
-    justify-content: center;
+            gap: 15px;
 
-    gap: 12px;
+            flex-wrap: wrap;
 
-    flex-wrap: wrap;
-}
+            margin-top: 25px;
+        }
 
-.button {
+        .whatsapp {
+            background: var(--verde);
+        }
 
-    display: inline-block;
+        .whatsapp:hover {
+            background: #20bd5b;
+        }
 
-    background: var(--roxo);
+        .instagram {
+            background: var(--roxo);
+        }
 
-    color: white;
 
-    padding: 14px 26px;
+        /* =========================
+           RODAPÉ
+        ========================= */
 
-    border-radius: 8px;
+        footer {
+            border-top: 1px solid var(--borda);
 
-    text-decoration: none;
+            padding: 30px;
 
-    font-weight: bold;
+            text-align: center;
 
-    border: none;
+            color: #777;
+        }
 
-    cursor: pointer;
+        footer span {
+            color: var(--roxo-claro);
+        }
 
-    transition: 0.2s;
-}
 
-.button:hover {
+        /* =========================
+           CARRINHO
+        ========================= */
 
-    background: var(--roxo-claro);
+        .cart {
+            position: fixed;
 
-    transform: translateY(-2px);
-}
+            top: 0;
+            right: -430px;
 
-.button-outline {
+            width: 420px;
+            max-width: 100%;
 
-    background: transparent;
+            height: 100vh;
 
-    border: 1px solid var(--roxo);
+            background: #101010;
 
-    color: white;
-}
+            z-index: 2000;
 
-.button-outline:hover {
-    background: var(--roxo);
-}
+            padding: 25px;
 
+            transition: 0.4s;
 
-/* =========================================================
-   SEÇÕES
-========================================================= */
+            box-shadow:
+                -10px 0 40px rgba(0,0,0,0.6);
 
-section {
-    padding: 80px 6%;
-}
+            overflow-y: auto;
+        }
 
-.title {
+        .cart.open {
+            right: 0;
+        }
 
-    text-align: center;
+        .cart-header {
+            display: flex;
 
-    margin-bottom: 40px;
-}
+            align-items: center;
 
-.title h2 {
+            justify-content: space-between;
 
-    font-size: 38px;
+            border-bottom: 1px solid #333;
 
-    margin-bottom: 10px;
-}
+            padding-bottom: 15px;
+        }
 
-.title p {
-    color: var(--cinza);
-}
+        .cart-header h2 {
+            font-size: 25px;
+        }
 
+        .close-button {
+            background: none;
 
-/* =========================================================
-   BARRA DE PRODUTOS
-========================================================= */
+            border: none;
 
-.products-tools {
+            color: white;
 
-    display: flex;
+            font-size: 32px;
 
-    justify-content: space-between;
+            cursor: pointer;
+        }
 
-    align-items: center;
+        .cart-items {
+            margin-top: 20px;
+        }
 
-    gap: 15px;
+        .cart-item {
+            background: #1a1a1a;
 
-    margin-bottom: 30px;
+            padding: 15px;
 
-    flex-wrap: wrap;
-}
+            border-radius: 8px;
 
-.search-box {
+            margin-bottom: 10px;
 
-    flex: 1;
+            border: 1px solid #292929;
+        }
 
-    min-width: 230px;
+        .cart-item strong {
+            display: block;
+            margin-bottom: 7px;
+        }
 
-    position: relative;
-}
+        .cart-item-size {
+            color: #aaa;
+            font-size: 14px;
+        }
 
-.search-box input {
+        .cart-item-price {
+            color: var(--roxo-claro);
+            font-weight: bold;
+            margin-top: 8px;
+        }
 
-    width: 100%;
+        .cart-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
 
-    background: var(--card);
+        .quantity-button {
+            width: 30px;
+            height: 30px;
 
-    border: 1px solid var(--borda);
+            border: none;
 
-    color: white;
+            background: var(--roxo);
 
-    padding: 14px 15px;
+            color: white;
 
-    border-radius: 8px;
+            border-radius: 5px;
 
-    outline: none;
-}
+            cursor: pointer;
 
-.search-box input:focus {
-    border-color: var(--roxo);
-}
+            font-weight: bold;
+        }
 
-.category-buttons {
+        .quantity {
+            min-width: 25px;
+            text-align: center;
+        }
 
-    display: flex;
+        .remove-button {
+            margin-left: auto;
 
-    gap: 8px;
+            background: #333;
 
-    flex-wrap: wrap;
-}
+            border: none;
 
-.category-button {
+            color: white;
 
-    background: var(--card);
+            padding: 7px 10px;
 
-    color: white;
+            border-radius: 5px;
 
-    border: 1px solid var(--borda);
+            cursor: pointer;
+        }
 
-    padding: 10px 14px;
+        .remove-button:hover {
+            background: var(--vermelho);
+        }
 
-    border-radius: 7px;
+        .total {
+            margin-top: 25px;
 
-    cursor: pointer;
+            padding-top: 20px;
 
-    transition: 0.2s;
-}
+            border-top: 1px solid #333;
 
-.category-button:hover,
-.category-button.active {
+            font-size: 22px;
 
-    background: var(--roxo);
+            font-weight: bold;
+        }
 
-    border-color: var(--roxo);
-}
+        .checkout {
+            width: 100%;
 
+            margin-top: 20px;
 
-/* =========================================================
-   PRODUTOS
-========================================================= */
+            padding: 14px;
 
-.products {
+            background: var(--verde);
 
-    display: grid;
+            color: white;
 
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(230px, 1fr)
-        );
+            border: none;
 
-    gap: 25px;
-}
+            border-radius: 7px;
 
-.product {
+            cursor: pointer;
 
-    background: var(--card);
+            font-weight: bold;
 
-    border: 1px solid var(--borda);
+            font-size: 15px;
+        }
 
-    border-radius: 12px;
+        .checkout:hover {
+            background: #20bd5b;
+        }
 
-    overflow: hidden;
 
-    transition: 0.3s;
+        /* =========================
+           AVISO
+        ========================= */
 
-    position: relative;
-}
+        .notice {
+            position: fixed;
 
-.product:hover {
+            bottom: 25px;
+            left: 50%;
 
-    transform: translateY(-6px);
+            transform: translateX(-50%) translateY(100px);
 
-    border-color: var(--roxo);
-}
+            background: #181818;
 
-.product-image {
+            border: 1px solid var(--roxo);
 
-    position: relative;
+            color: white;
 
-    background: #0c0c0c;
+            padding: 14px 20px;
 
-    overflow: hidden;
-}
+            border-radius: 8px;
 
-.product img {
+            z-index: 5000;
 
-    width: 100%;
+            opacity: 0;
 
-    height: 300px;
+            transition: 0.3s;
+        }
 
-    object-fit: cover;
+        .notice.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
 
-    display: block;
 
-    transition: 0.4s;
-}
+        /* =========================
+           CELULAR
+        ========================= */
 
-.product:hover img {
-    transform: scale(1.03);
-}
+        @media (max-width: 700px) {
 
-.favorite-button {
+            nav {
+                display: none;
+            }
 
-    position: absolute;
+            header {
+                padding: 16px 5%;
+            }
 
-    top: 12px;
+            .logo {
+                font-size: 22px;
+            }
 
-    right: 12px;
+            .cart-button {
+                padding: 9px 12px;
+            }
 
-    width: 38px;
+            section {
+                padding: 60px 5%;
+            }
 
-    height: 38px;
+            .title h2 {
+                font-size: 30px;
+            }
 
-    border-radius: 50%;
+            .hero {
+                min-height: 70vh;
+            }
 
-    border: 1px solid #444;
+            .hero p {
+                font-size: 14px;
+            }
 
-    background: rgba(0,0,0,0.7);
+            .cart {
+                width: 100%;
+            }
 
-    color: white;
+            .product img {
+                height: 280px;
+            }
+        }
 
-    cursor: pointer;
-
-    font-size: 18px;
-}
-
-.favorite-button.active {
-
-    color: #a855f7;
-
-    border-color: var(--roxo);
-}
-
-.product-info {
-    padding: 20px;
-}
-
-.product-info h3 {
-
-    font-size: 18px;
-
-    margin-bottom: 8px;
-}
-
-.product-info p {
-
-    color: var(--cinza);
-
-    font-size: 14px;
-
-    margin-bottom: 13px;
-
-    min-height: 34px;
-}
-
-.price {
-
-    color: var(--roxo-claro);
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-    margin-bottom: 15px;
-}
-
-
-/* =========================================================
-   TAMANHOS
-========================================================= */
-
-.size-box {
-
-    margin-bottom: 15px;
-}
-
-.size-box label {
-
-    display: block;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    margin-bottom: 7px;
-}
-
-.size-select {
-
-    width: 100%;
-
-    padding: 11px;
-
-    background: var(--card-2);
-
-    color: white;
-
-    border: 1px solid #333;
-
-    border-radius: 7px;
-
-    cursor: pointer;
-
-    outline: none;
-}
-
-.size-select:focus {
-    border-color: var(--roxo);
-}
-
-.stock {
-
-    color: #777;
-
-    font-size: 12px;
-
-    margin-top: 6px;
-}
-
-
-/* =========================================================
-   BOTÃO PRODUTO
-========================================================= */
-
-.add-button {
-
-    width: 100%;
-
-    border: none;
-
-    background: var(--roxo);
-
-    color: white;
-
-    padding: 13px;
-
-    border-radius: 7px;
-
-    cursor: pointer;
-
-    font-weight: bold;
-
-    transition: 0.2s;
-}
-
-.add-button:hover {
-    background: var(--roxo-claro);
-}
-
-.add-button:disabled {
-
-    background: #333;
-
-    color: #777;
-
-    cursor: not-allowed;
-}
-
-
-/* =========================================================
-   SOBRE
-========================================================= */
-
-.about {
-
-    background: var(--fundo-2);
-
-    text-align: center;
-}
-
-.about p {
-
-    max-width: 750px;
-
-    margin: auto;
-
-    color: #aaa;
-
-    line-height: 1.8;
-
-    font-size: 16px;
-}
-
-
-/* =========================================================
-   BENEFÍCIOS
-========================================================= */
-
-.benefits {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(200px, 1fr)
-        );
-
-    gap: 20px;
-
-    margin-top: 40px;
-}
-
-.benefit {
-
-    background: var(--card);
-
-    border: 1px solid var(--borda);
-
-    padding: 25px;
-
-    border-radius: 10px;
-
-    text-align: center;
-}
-
-.benefit-icon {
-
-    font-size: 30px;
-
-    margin-bottom: 12px;
-}
-
-.benefit h3 {
-    margin-bottom: 8px;
-}
-
-.benefit p {
-
-    color: var(--cinza);
-
-    font-size: 13px;
-
-    line-height: 1.5;
-}
-
-
-/* =========================================================
-   CONTATO
-========================================================= */
-
-.contact {
-    text-align: center;
-}
-
-.contact-buttons {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-
-    margin-top: 25px;
-}
-
-.whatsapp {
-    background: var(--verde);
-}
-
-.whatsapp:hover {
-    background: #20bd5a;
-}
-
-.instagram {
-    background: #e1306c;
-}
-
-.instagram:hover {
-    background: #f04b82;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-
-    border-top: 1px solid var(--borda);
-
-    padding: 30px;
-
-    text-align: center;
-
-    color: #777;
-}
-
-footer span {
-    color: var(--roxo-claro);
-}
-
-
-/* =========================================================
-   CARRINHO
-========================================================= */
-
-.cart {
-
-    position: fixed;
-
-    top: 0;
-
-    right: -430px;
-
-    width: 420px;
-
-    max-width: 100%;
-
-    height: 100vh;
-
-    background: #101010;
-
-    z-index: 2000;
-
-    padding: 25px;
-
-    transition: 0.35s;
-
-    box-shadow:
-        -10px 0 40px rgba(0,0,0,0.7);
-
-    display: flex;
-
-    flex-direction: column;
-}
-
-.cart.open {
-    right: 0;
-}
-
-.cart-header {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    border-bottom: 1px solid #333;
-
-    padding-bottom: 15px;
-}
-
-.close-button {
-
-    background: none;
-
-    border: none;
-
-    color: white;
-
-    font-size: 30px;
-
-    cursor: pointer;
-}
-
-.cart-items {
-
-    margin-top: 20px;
-
-    flex: 1;
-
-    overflow-y: auto;
-
-    padding-right: 5px;
-}
-
-.cart-item {
-
-    background: var(--card-2);
-
-    padding: 15px;
-
-    border-radius: 9px;
-
-    margin-bottom: 10px;
-
-    border: 1px solid #292929;
-}
-
-.cart-item-name {
-
-    font-weight: bold;
-
-    margin-bottom: 6px;
-}
-
-.cart-item-info {
-
-    color: #999;
-
-    font-size: 13px;
-
-    margin-bottom: 10px;
-}
-
-.cart-item-price {
-
-    color: var(--roxo-claro);
-
-    font-weight: bold;
-}
-
-
-/* =========================================================
-   QUANTIDADE
-========================================================= */
-
-.quantity-control {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-top: 12px;
-}
-
-.quantity-control button {
-
-    width: 30px;
-
-    height: 30px;
-
-    background: #333;
-
-    border: none;
-
-    color: white;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-
-    font-weight: bold;
-}
-
-.quantity-control button:hover {
-    background: var(--roxo);
-}
-
-.quantity-control span {
-
-    min-width: 25px;
-
-    text-align: center;
-
-    font-weight: bold;
-}
-
-.remove-button {
-
-    margin-top: 12px;
-
-    background: transparent;
-
-    border: 1px solid #444;
-
-    color: #aaa;
-
-    padding: 7px 10px;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-}
-
-.remove-button:hover {
-
-    border-color: var(--vermelho);
-
-    color: #ff5555;
-}
-
-
-/* =========================================================
-   TOTAL
-========================================================= */
-
-.cart-footer {
-
-    border-top: 1px solid #333;
-
-    padding-top: 18px;
-
-    margin-top: 15px;
-}
-
-.total {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    font-size: 22px;
-
-    font-weight: bold;
-}
-
-.total-value {
-    color: var(--roxo-claro);
-}
-
-.checkout {
-
-    width: 100%;
-
-    margin-top: 15px;
-
-    padding: 14px;
-
-    background: var(--verde);
-
-    color: white;
-
-    border: none;
-
-    border-radius: 7px;
-
-    cursor: pointer;
-
-    font-weight: bold;
-
-    font-size: 15px;
-}
-
-.checkout:hover {
-    background: #20bd5a;
-}
-
-
-/* =========================================================
-   TOAST
-========================================================= */
-
-.toast {
-
-    position: fixed;
-
-    bottom: 25px;
-
-    left: 50%;
-
-    transform:
-        translate(-50%, 100px);
-
-    background: #181818;
-
-    border: 1px solid var(--roxo);
-
-    color: white;
-
-    padding: 14px 20px;
-
-    border-radius: 8px;
-
-    z-index: 5000;
-
-    opacity: 0;
-
-    transition: 0.3s;
-
-    pointer-events: none;
-}
-
-.toast.show {
-
-    opacity: 1;
-
-    transform:
-        translate(-50%, 0);
-}
-
-
-/* =========================================================
-   SEM PRODUTOS
-========================================================= */
-
-.no-products {
-
-    grid-column: 1 / -1;
-
-    text-align: center;
-
-    padding: 50px;
-
-    color: #777;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 800px) {
-
-    nav {
-        display: none;
-    }
-
-    header {
-        padding: 15px 5%;
-    }
-
-    section {
-        padding: 60px 5%;
-    }
-
-    .hero {
-        min-height: 70vh;
-    }
-
-    .title h2 {
-        font-size: 30px;
-    }
-
-    .products-tools {
-        align-items: stretch;
-    }
-
-    .search-box {
-        min-width: 100%;
-    }
-
-}
-
-@media (max-width: 500px) {
-
-    .logo {
-        font-size: 22px;
-    }
-
-    .cart-button {
-        padding: 9px 11px;
-        font-size: 12px;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .hero p {
-        font-size: 13px;
-    }
-
-    .product img {
-        height: 270px;
-    }
-
-    .cart {
-        width: 100%;
-    }
-
-}
-
-</style>
-
+    </style>
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
 
-<header>
+    <header>
 
-    <a
-        href="#inicio"
-        class="logo"
-    >
-        Lvss<span>.treet</span>
-    </a>
+        <div class="logo">
+            Lvss<span>.treet</span>
+        </div>
 
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
 
-    <nav>
+        <button
+            class="cart-button"
+            onclick="abrirCarrinho()">
 
-        <a href="#inicio">
-            Início
-        </a>
+            🛒 Carrinho
+            (<span id="quantidade">0</span>)
 
-        <a href="#produtos">
-            Produtos
-        </a>
+        </button>
 
-        <a href="#sobre">
-            Sobre
-        </a>
-
-        <a href="#contato">
-            Contato
-        </a>
-
-    </nav>
+    </header>
 
 
-    <button
-        class="cart-button"
-        onclick="abrirCarrinho()"
-    >
+    <!-- =========================
+         INÍCIO
+    ========================== -->
 
-        🛒 Carrinho
-        (<span id="quantidade">0</span>)
+    <section
+        class="hero"
+        id="inicio">
 
-    </button>
+        <div>
 
-</header>
+            <h1>
+                LVSS<span>.TREET</span>
+            </h1>
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section
-    class="hero"
-    id="inicio"
->
-
-    <div class="hero-content">
-
-        <h1>
-            LVSS<span>.TREET</span>
-        </h1>
-
-        <p>
-            STREETWEAR • ATITUDE • PERSONALIDADE
-        </p>
-
-
-        <div class="hero-buttons">
+            <p>
+                STREETWEAR • ATITUDE • PERSONALIDADE
+            </p>
 
             <a
                 href="#produtos"
-                class="button"
-            >
+                class="button">
+
                 VER PRODUTOS
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUTOS
+    ========================== -->
+
+    <section id="produtos">
+
+        <div class="title">
+
+            <h2>
+                NOSSOS PRODUTOS
+            </h2>
+
+            <p>
+                Escolha seu produto e tamanho.
+            </p>
+
+        </div>
+
+        <div
+            class="products"
+            id="listaProdutos">
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE
+    ========================== -->
+
+    <section
+        class="about"
+        id="sobre">
+
+        <div class="title">
+
+            <h2>
+                SOBRE A LVSS.TREET
+            </h2>
+
+        </div>
+
+        <p>
+
+            A Lvss.treet nasceu com a ideia de criar
+            uma marca streetwear com atitude,
+            personalidade e estilo próprio.
+
+            Nosso objetivo é trazer produtos
+            que representem personalidade,
+            estilo e autenticidade.
+
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         CONTATO
+    ========================== -->
+
+    <section
+        class="contact"
+        id="contato">
+
+        <div class="title">
+
+            <h2>
+                FALE CONOSCO
+            </h2>
+
+            <p>
+                Entre em contato com a Lvss.treet.
+            </p>
+
+        </div>
+
+        <div class="contact-buttons">
+
+            <a
+                id="whatsapp"
+                class="button whatsapp"
+                target="_blank">
+
+                📱 WHATSAPP
+
             </a>
 
             <a
-                href="#sobre"
-                class="button button-outline"
-            >
-                CONHEÇA A LVSS
+                id="instagram"
+                class="button instagram"
+                target="_blank">
+
+                📸 INSTAGRAM
+
             </a>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =====================================================
-     PRODUTOS
-===================================================== -->
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
 
-<section id="produtos">
+    <footer>
 
-    <div class="title">
+        © 2026
 
-        <h2>
-            NOSSOS PRODUTOS
-        </h2>
+        <span>
+            Lvss.treet
+        </span>
 
-        <p>
-            Escolha seu estilo.
-        </p>
+        — Todos os direitos reservados.
 
-    </div>
+    </footer>
 
 
-    <!-- BUSCA E CATEGORIAS -->
-
-    <div class="products-tools">
-
-        <div class="search-box">
-
-            <input
-                type="text"
-                id="busca"
-                placeholder="🔎 Procurar produto..."
-                oninput="filtrarProdutos()"
-            >
-
-        </div>
-
-
-        <div class="category-buttons">
-
-            <button
-                class="category-button active"
-                onclick="selecionarCategoria('todos', this)"
-            >
-                Todos
-            </button>
-
-            <button
-                class="category-button"
-                onclick="selecionarCategoria('camisetas', this)"
-            >
-                Camisetas
-            </button>
-
-            <button
-                class="category-button"
-                onclick="selecionarCategoria('moletons', this)"
-            >
-                Moletons
-            </button>
-
-            <button
-                class="category-button"
-                onclick="selecionarCategoria('bones', this)"
-            >
-                Bonés
-            </button>
-
-            <button
-                class="category-button"
-                onclick="selecionarCategoria('tenis', this)"
-            >
-                Tênis
-            </button>
-
-        </div>
-
-    </div>
-
+    <!-- =========================
+         CARRINHO
+    ========================== -->
 
     <div
-        class="products"
-        id="listaProdutos"
-    ></div>
+        class="cart"
+        id="carrinho">
 
-</section>
+        <div class="cart-header">
 
+            <h2>
+                🛒 Carrinho
+            </h2>
 
-<!-- =====================================================
-     SOBRE
-===================================================== -->
+            <button
+                class="close-button"
+                onclick="fecharCarrinho()">
 
-<section
-    class="about"
-    id="sobre"
->
+                ×
 
-    <div class="title">
-
-        <h2>
-            SOBRE A LVSS.TREET
-        </h2>
-
-        <p>
-            Mais que roupa. Identidade.
-        </p>
-
-    </div>
-
-
-    <p>
-
-        A Lvss.treet nasceu com a ideia
-        de criar uma marca streetwear
-        com atitude, personalidade
-        e estilo próprio.
-
-        Nossa proposta é trazer peças
-        que representem quem você é,
-        sem precisar seguir padrões.
-
-    </p>
-
-
-    <div class="benefits">
-
-
-        <div class="benefit">
-
-            <div class="benefit-icon">
-                🧢
-            </div>
-
-            <h3>
-                Streetwear
-            </h3>
-
-            <p>
-                Estilo urbano para diferentes
-                momentos.
-            </p>
+            </button>
 
         </div>
 
 
-        <div class="benefit">
+        <div
+            class="cart-items"
+            id="itensCarrinho">
 
-            <div class="benefit-icon">
-                📦
-            </div>
+            <p style="color:#999;margin-top:20px;">
 
-            <h3>
-                Pedido fácil
-            </h3>
+                Seu carrinho está vazio.
 
-            <p>
-                Monte seu carrinho e envie
-                seu pedido pelo WhatsApp.
             </p>
 
         </div>
 
-
-        <div class="benefit">
-
-            <div class="benefit-icon">
-                🔥
-            </div>
-
-            <h3>
-                Personalidade
-            </h3>
-
-            <p>
-                Peças escolhidas para
-                representar seu estilo.
-            </p>
-
-        </div>
-
-
-        <div class="benefit">
-
-            <div class="benefit-icon">
-                💜
-            </div>
-
-            <h3>
-                Lvss.treet
-            </h3>
-
-            <p>
-                Uma marca criada para
-                quem tem atitude.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTATO
-===================================================== -->
-
-<section
-    class="contact"
-    id="contato"
->
-
-    <div class="title">
-
-        <h2>
-            FALE CONOSCO
-        </h2>
-
-        <p>
-            Tire suas dúvidas ou faça seu pedido.
-        </p>
-
-    </div>
-
-
-    <div class="contact-buttons">
-
-        <a
-            id="whatsapp"
-            class="button whatsapp"
-            target="_blank"
-        >
-            📱 WHATSAPP
-        </a>
-
-
-        <a
-            id="instagram"
-            class="button instagram"
-            target="_blank"
-        >
-            📸 INSTAGRAM
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    © 2026
-
-    <span>
-        Lvss.treet
-    </span>
-
-    — Todos os direitos reservados.
-
-</footer>
-
-
-<!-- =====================================================
-     CARRINHO
-===================================================== -->
-
-<div
-    class="cart"
-    id="carrinho"
->
-
-    <div class="cart-header">
-
-        <h2>
-            🛒 Seu Carrinho
-        </h2>
-
-
-        <button
-            class="close-button"
-            onclick="fecharCarrinho()"
-        >
-            ×
-        </button>
-
-    </div>
-
-
-    <div
-        class="cart-items"
-        id="itensCarrinho"
-    >
-
-        <p style="color:#777;">
-            Seu carrinho está vazio.
-        </p>
-
-    </div>
-
-
-    <div class="cart-footer">
 
         <div class="total">
 
-            <span>
-                Total
-            </span>
+            Total:
 
-            <span class="total-value">
+            R$
 
-                R$
-
-                <span id="total">
-                    0,00
-                </span>
-
+            <span id="total">
+                0,00
             </span>
 
         </div>
@@ -1580,8 +936,7 @@ footer span {
 
         <button
             class="checkout"
-            onclick="finalizarPedido()"
-        >
+            onclick="finalizarPedido()">
 
             📲 FINALIZAR PEDIDO
 
@@ -1589,1142 +944,1042 @@ footer span {
 
     </div>
 
-</div>
+
+    <!-- AVISO -->
+
+    <div
+        class="notice"
+        id="notice">
+
+    </div>
 
 
-<!-- =====================================================
-     TOAST
-===================================================== -->
-
-<div
-    class="toast"
-    id="toast"
->
-    Produto adicionado ao carrinho!
-</div>
+    <script>
 
 
-<script>
+        /* =================================================
+           CONFIGURAÇÕES
+        ================================================= */
+
+        const whatsappNumero = "554991221247";
+
+        const instagramNome = "lvss.treet";
 
 
-/* =========================================================
-   CONFIGURAÇÕES
-========================================================= */
+        /* =================================================
+           PRODUTOS
 
-const whatsappNumero =
-    "554991221247";
+           IMPORTANTE:
 
-const instagramNome =
-    "lvss.treet";
+           Para imagens da sua pasta:
 
+           imagens/nome-da-imagem.jpg
 
-/* =========================================================
-   PRODUTOS
-========================================================= */
+           Exemplo:
 
-const produtos = [
+           imagens/bone-nike.jpg
 
-    {
-        nome:
-            "Moletom Nike Nsw Club Ft Official Preto",
+        ================================================= */
 
-        descricao:
-            "Moletom Nike estilo streetwear.",
+        const produtos = [
 
-        categoria:
-            "moletons",
+            {
+                id: 1,
 
-        preco:
-            89.90,
+                nome: "Moletom Nike Nsw Club Ft Official Preto",
 
-        imagem:
-            "imagens/moletom-nike.jpg",
+                descricao: "Moletom Nike estilo streetwear.",
 
-        tamanhos:
-            ["P", "M", "G", "GG"],
+                preco: 89.90,
 
-        estoque: {
+                imagem: "imagens/moletom-nike.jpg",
 
-            P: 5,
-            M: 10,
-            G: 8,
-            GG: 4
+                tamanhos: ["P", "M", "G", "GG"],
 
-        }
-    },
+                estoque: {
+                    P: 5,
+                    M: 10,
+                    G: 8,
+                    GG: 4
+                }
+            },
 
 
-    {
-        nome:
-            "Camiseta Lvss Purple",
+            {
+                id: 2,
 
-        descricao:
-            "Edição especial roxa.",
+                nome: "Camiseta Lvss Purple",
 
-        categoria:
-            "camisetas",
+                descricao: "Edição especial roxa.",
 
-        preco:
-            99.90,
+                preco: 99.90,
 
-        imagem:
-            "https://placehold.co/600x600/35105c/ffffff?text=LVSS+PURPLE",
+                imagem: "https://placehold.co/600x600/35105c/ffffff?text=LVSS+PURPLE",
 
-        tamanhos:
-            ["P", "M", "G", "GG"],
+                tamanhos: ["P", "M", "G", "GG"],
 
-        estoque: {
-
-            P: 5,
-            M: 10,
-            G: 8,
-            GG: 4
-
-        }
-    },
+                estoque: {
+                    P: 5,
+                    M: 10,
+                    G: 8,
+                    GG: 4
+                }
+            },
 
 
-    {
-        nome:
-            "Moletom Lvss",
+            {
+                id: 3,
 
-        descricao:
-            "Moletom streetwear.",
+                nome: "Moletom Lvss",
 
-        categoria:
-            "moletons",
+                descricao: "Moletom streetwear.",
 
-        preco:
-            159.90,
+                preco: 159.90,
 
-        imagem:
-            "https://placehold.co/600x600/181818/ffffff?text=LVSS+HOODIE",
+                imagem: "https://placehold.co/600x600/181818/ffffff?text=LVSS+HOODIE",
 
-        tamanhos:
-            ["P", "M", "G", "GG"],
+                tamanhos: ["P", "M", "G", "GG"],
 
-        estoque: {
-
-            P: 3,
-            M: 7,
-            G: 5,
-            GG: 3
-
-        }
-    },
+                estoque: {
+                    P: 3,
+                    M: 7,
+                    G: 5,
+                    GG: 3
+                }
+            },
 
 
-    {
-        nome:
-            "Boné Lvss",
+            {
+                id: 4,
 
-        descricao:
-            "Boné streetwear.",
+                nome: "Boné Lvss",
 
-        categoria:
-            "bones",
+                descricao: "Boné streetwear.",
 
-        preco:
-            79.90,
+                preco: 79.90,
 
-        imagem:
-            "imagens/bone-nike.jpg",
+                imagem: "imagens/bone-nike.jpg",
 
-        tamanhos:
-            ["Único"],
+                tamanhos: ["Único"],
 
-        estoque: {
-
-            "Único": 10
-
-        }
-    },
+                estoque: {
+                    "Único": 10
+                }
+            },
 
 
-    {
-        nome:
-            "Tênis Lvss Street",
+            {
+                id: 5,
 
-        descricao:
-            "Tênis para completar o visual.",
+                nome: "Tênis Lvss Street",
 
-        categoria:
-            "tenis",
+                descricao: "Tênis para completar o visual.",
 
-        preco:
-            249.90,
+                preco: 249.90,
 
-        imagem:
-            "https://placehold.co/600x600/252525/ffffff?text=LVSS+SNEAKER",
+                imagem: "https://placehold.co/600x600/252525/ffffff?text=LVSS+SNEAKER",
 
-        tamanhos:
-            [
-                "37",
-                "38",
-                "39",
-                "40",
-                "41",
-                "42",
-                "43"
-            ],
+                tamanhos: ["P", "M", "G", "GG"],
 
-        estoque: {
+                estoque: {
+                    P: 2,
+                    M: 5,
+                    G: 4,
+                    GG: 2
+                }
+            }
 
-            "37": 2,
-            "38": 3,
-            "39": 4,
-            "40": 5,
-            "41": 5,
-            "42": 3,
-            "43": 2
+        ];
+
+
+        /* =================================================
+           CARRINHO
+        ================================================= */
+
+        let carrinho = [];
+
+
+        /* Tamanhos escolhidos */
+
+        let tamanhosSelecionados = {};
+
+
+        /* =================================================
+           FORMATAR PREÇO
+        ================================================= */
+
+        function formatarPreco(valor) {
+
+            return valor
+                .toFixed(2)
+                .replace(".", ",");
 
         }
-    }
-
-];
 
 
-/* =========================================================
-   ESTADO
-========================================================= */
+        /* =================================================
+           AVISO
+        ================================================= */
 
-let carrinho = [];
+        function mostrarAviso(texto) {
 
-let categoriaAtual = "todos";
+            const aviso =
+                document.getElementById("notice");
 
+            aviso.textContent = texto;
 
-/* =========================================================
-   LOCAL STORAGE
-========================================================= */
+            aviso.classList.add("show");
 
-function salvarCarrinho() {
+            setTimeout(function() {
 
-    localStorage.setItem(
-        "lvss_carrinho",
-        JSON.stringify(carrinho)
-    );
+                aviso.classList.remove("show");
 
-}
+            }, 2500);
 
-
-function carregarCarrinho() {
-
-    const salvo =
-        localStorage.getItem(
-            "lvss_carrinho"
-        );
-
-    if (!salvo) {
-        return;
-    }
-
-    try {
-
-        carrinho =
-            JSON.parse(salvo);
-
-    } catch {
-
-        carrinho = [];
-
-    }
-
-}
+        }
 
 
-/* =========================================================
-   FORMATAR PREÇO
-========================================================= */
+        /* =================================================
+           MOSTRAR PRODUTOS
+        ================================================= */
 
-function formatarPreco(valor) {
+        function mostrarProdutos() {
 
-    return valor
-        .toFixed(2)
-        .replace(".", ",");
+            const lista =
+                document.getElementById("listaProdutos");
 
-}
-
-
-/* =========================================================
-   MOSTRAR PRODUTOS
-========================================================= */
-
-function mostrarProdutos(listaProdutos = produtos) {
-
-    const lista =
-        document.getElementById(
-            "listaProdutos"
-        );
-
-    lista.innerHTML = "";
+            lista.innerHTML = "";
 
 
-    if (listaProdutos.length === 0) {
+            produtos.forEach(function(produto) {
 
-        lista.innerHTML = `
-
-            <div class="no-products">
-
-                <h3>
-                    Nenhum produto encontrado.
-                </h3>
-
-                <p>
-                    Tente procurar por outro nome.
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-    }
+                tamanhosSelecionados[produto.id] =
+                    produto.tamanhos[0];
 
 
-    listaProdutos.forEach(
-        function(produto, index) {
-
-            let opcoes = "";
+                let tamanhosHTML = "";
 
 
-            produto.tamanhos.forEach(
-                function(tamanho) {
+                produto.tamanhos.forEach(function(tamanho) {
 
                     const estoque =
                         produto.estoque[tamanho];
 
+                    const semEstoque =
+                        estoque <= 0;
 
-                    opcoes += `
 
-                        <option
-                            value="${tamanho}"
-                            ${estoque <= 0 ? "disabled" : ""}
-                        >
+                    tamanhosHTML += `
+
+                        <button
+                            type="button"
+                            class="size-button
+                            ${tamanho === produto.tamanhos[0] ? "selected" : ""}
+                            ${semEstoque ? "disabled" : ""}"
+
+                            ${semEstoque ? "disabled" : ""}
+
+                            onclick="
+                                selecionarTamanho(
+                                    ${produto.id},
+                                    '${tamanho}'
+                                )
+                            ">
 
                             ${tamanho}
 
-                            ${
-                                estoque > 0
-                                ? " - " + estoque + " disponíveis"
-                                : " - ESGOTADO"
-                            }
-
-                        </option>
+                        </button>
 
                     `;
 
-                }
-            );
+                });
 
 
-            lista.innerHTML += `
+                const primeiroTamanho =
+                    produto.tamanhos[0];
 
-                <div class="product">
+
+                const estoqueInicial =
+                    produto.estoque[primeiroTamanho];
 
 
-                    <div class="product-image">
+                lista.innerHTML += `
+
+                    <div class="product">
 
                         <img
                             src="${produto.imagem}"
                             alt="${produto.nome}"
-
-                            onerror="
-                                this.src='https://placehold.co/600x600/111111/ffffff?text=SEM+IMAGEM'
-                            "
+                            onerror="this.src='https://placehold.co/600x600/111111/ffffff?text=SEM+IMAGEM'"
                         >
 
+                        <div class="product-info">
 
-                        <button
-                            class="favorite-button"
-                            id="favorito-${index}"
+                            <h3>
+                                ${produto.nome}
+                            </h3>
 
-                            onclick="
-                                alternarFavorito(${index})
-                            "
-                        >
+                            <p>
+                                ${produto.descricao}
+                            </p>
 
-                            ♡
+                            <div class="price">
 
-                        </button>
-
-                    </div>
-
-
-                    <div class="product-info">
-
-
-                        <h3>
-                            ${produto.nome}
-                        </h3>
-
-
-                        <p>
-                            ${produto.descricao}
-                        </p>
-
-
-                        <div class="price">
-
-                            R$
-                            ${formatarPreco(produto.preco)}
-
-                        </div>
-
-
-                        <div class="size-box">
-
-                            <label>
-                                Tamanho:
-                            </label>
-
-
-                            <select
-                                class="size-select"
-                                id="tamanho-${index}"
-                            >
-
-                                <option value="">
-                                    Escolha um tamanho
-                                </option>
-
-                                ${opcoes}
-
-                            </select>
-
-
-                            <div class="stock">
-
-                                O estoque é atualizado
-                                automaticamente.
+                                R$
+                                ${formatarPreco(produto.preco)}
 
                             </div>
 
+
+                            <div class="size-title">
+
+                                TAMANHO:
+
+                            </div>
+
+
+                            <div
+                                class="sizes"
+                                id="tamanhos-${produto.id}">
+
+                                ${tamanhosHTML}
+
+                            </div>
+
+
+                            <div
+                                class="stock"
+                                id="estoque-${produto.id}">
+
+                                Estoque:
+                                ${estoqueInicial}
+                                unidade(s)
+
+                            </div>
+
+
+                            <button
+                                class="add-button"
+
+                                id="add-${produto.id}"
+
+                                onclick="
+                                    adicionarProduto(
+                                        ${produto.id}
+                                    )
+                                ">
+
+                                ADICIONAR AO CARRINHO
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+
+
+        /* =================================================
+           SELECIONAR TAMANHO
+        ================================================= */
+
+        function selecionarTamanho(
+            produtoId,
+            tamanho
+        ) {
+
+            const produto =
+                produtos.find(
+                    p => p.id === produtoId
+                );
+
+
+            if (!produto) {
+                return;
+            }
+
+
+            if (produto.estoque[tamanho] <= 0) {
+
+                mostrarAviso(
+                    "Esse tamanho está esgotado."
+                );
+
+                return;
+            }
+
+
+            tamanhosSelecionados[produtoId] =
+                tamanho;
+
+
+            const container =
+                document.getElementById(
+                    "tamanhos-" + produtoId
+                );
+
+
+            const botoes =
+                container.querySelectorAll(
+                    ".size-button"
+                );
+
+
+            botoes.forEach(function(botao) {
+
+                botao.classList.remove(
+                    "selected"
+                );
+
+            });
+
+
+            botoes.forEach(function(botao) {
+
+                if (
+                    botao.textContent.trim()
+                    === tamanho
+                ) {
+
+                    botao.classList.add(
+                        "selected"
+                    );
+
+                }
+
+            });
+
+
+            atualizarEstoqueVisual(
+                produtoId
+            );
+
+        }
+
+
+        /* =================================================
+           ATUALIZAR ESTOQUE VISUAL
+        ================================================= */
+
+        function atualizarEstoqueVisual(
+            produtoId
+        ) {
+
+            const produto =
+                produtos.find(
+                    p => p.id === produtoId
+                );
+
+
+            if (!produto) {
+                return;
+            }
+
+
+            const tamanho =
+                tamanhosSelecionados[produtoId];
+
+
+            const quantidade =
+                produto.estoque[tamanho];
+
+
+            document.getElementById(
+                "estoque-" + produtoId
+            ).textContent =
+                "Estoque: " +
+                quantidade +
+                " unidade(s)";
+
+
+            const botao =
+                document.getElementById(
+                    "add-" + produtoId
+                );
+
+
+            if (quantidade <= 0) {
+
+                botao.disabled = true;
+
+                botao.textContent =
+                    "TAMANHO ESGOTADO";
+
+            } else {
+
+                botao.disabled = false;
+
+                botao.textContent =
+                    "ADICIONAR AO CARRINHO";
+
+            }
+
+        }
+
+
+        /* =================================================
+           ADICIONAR AO CARRINHO
+        ================================================= */
+
+        function adicionarProduto(
+            produtoId
+        ) {
+
+            const produto =
+                produtos.find(
+                    p => p.id === produtoId
+                );
+
+
+            if (!produto) {
+                return;
+            }
+
+
+            const tamanho =
+                tamanhosSelecionados[produtoId];
+
+
+            if (!tamanho) {
+
+                mostrarAviso(
+                    "Escolha um tamanho."
+                );
+
+                return;
+
+            }
+
+
+            if (produto.estoque[tamanho] <= 0) {
+
+                mostrarAviso(
+                    "Esse tamanho está esgotado."
+                );
+
+                return;
+
+            }
+
+
+            const itemExistente =
+                carrinho.find(
+                    item =>
+                        item.produtoId === produtoId &&
+                        item.tamanho === tamanho
+                );
+
+
+            if (itemExistente) {
+
+                if (
+                    itemExistente.quantidade >=
+                    produto.estoque[tamanho]
+                ) {
+
+                    mostrarAviso(
+                        "Você atingiu o limite do estoque."
+                    );
+
+                    return;
+
+                }
+
+
+                itemExistente.quantidade++;
+
+            } else {
+
+                carrinho.push({
+
+                    produtoId: produtoId,
+
+                    tamanho: tamanho,
+
+                    quantidade: 1
+
+                });
+
+            }
+
+
+            atualizarCarrinho();
+
+
+            mostrarAviso(
+                produto.nome +
+                " adicionado ao carrinho!"
+            );
+
+
+            /*
+              IMPORTANTE:
+
+              NÃO abrimos o carrinho aqui.
+
+              Assim o cliente continua na página.
+            */
+
+        }
+
+
+        /* =================================================
+           ABRIR CARRINHO
+        ================================================= */
+
+        function abrirCarrinho() {
+
+            document
+                .getElementById("carrinho")
+                .classList
+                .add("open");
+
+        }
+
+
+        /* =================================================
+           FECHAR CARRINHO
+        ================================================= */
+
+        function fecharCarrinho() {
+
+            document
+                .getElementById("carrinho")
+                .classList
+                .remove("open");
+
+        }
+
+
+        /* =================================================
+           AUMENTAR QUANTIDADE
+        ================================================= */
+
+        function aumentarQuantidade(
+            produtoId,
+            tamanho
+        ) {
+
+            const produto =
+                produtos.find(
+                    p => p.id === produtoId
+                );
+
+
+            const item =
+                carrinho.find(
+                    i =>
+                        i.produtoId === produtoId &&
+                        i.tamanho === tamanho
+                );
+
+
+            if (!produto || !item) {
+                return;
+            }
+
+
+            if (
+                item.quantidade >=
+                produto.estoque[tamanho]
+            ) {
+
+                mostrarAviso(
+                    "Não há mais unidades disponíveis."
+                );
+
+                return;
+
+            }
+
+
+            item.quantidade++;
+
+            atualizarCarrinho();
+
+        }
+
+
+        /* =================================================
+           DIMINUIR QUANTIDADE
+        ================================================= */
+
+        function diminuirQuantidade(
+            produtoId,
+            tamanho
+        ) {
+
+            const item =
+                carrinho.find(
+                    i =>
+                        i.produtoId === produtoId &&
+                        i.tamanho === tamanho
+                );
+
+
+            if (!item) {
+                return;
+            }
+
+
+            item.quantidade--;
+
+
+            if (item.quantidade <= 0) {
+
+                carrinho =
+                    carrinho.filter(
+                        i =>
+                            !(
+                                i.produtoId === produtoId &&
+                                i.tamanho === tamanho
+                            )
+                    );
+
+            }
+
+
+            atualizarCarrinho();
+
+        }
+
+
+        /* =================================================
+           REMOVER PRODUTO
+        ================================================= */
+
+        function removerProduto(
+            produtoId,
+            tamanho
+        ) {
+
+            carrinho =
+                carrinho.filter(
+                    item =>
+                        !(
+                            item.produtoId === produtoId &&
+                            item.tamanho === tamanho
+                        )
+                );
+
+
+            atualizarCarrinho();
+
+        }
+
+
+        /* =================================================
+           ATUALIZAR CARRINHO
+        ================================================= */
+
+        function atualizarCarrinho() {
+
+            const lista =
+                document.getElementById(
+                    "itensCarrinho"
+                );
+
+
+            const quantidadeElemento =
+                document.getElementById(
+                    "quantidade"
+                );
+
+
+            const totalElemento =
+                document.getElementById(
+                    "total"
+                );
+
+
+            let quantidadeTotal = 0;
+
+            let valorTotal = 0;
+
+
+            carrinho.forEach(function(item) {
+
+                const produto =
+                    produtos.find(
+                        p => p.id === item.produtoId
+                    );
+
+
+                if (!produto) {
+                    return;
+                }
+
+
+                quantidadeTotal +=
+                    item.quantidade;
+
+
+                valorTotal +=
+                    produto.preco *
+                    item.quantidade;
+
+            });
+
+
+            quantidadeElemento.textContent =
+                quantidadeTotal;
+
+
+            totalElemento.textContent =
+                formatarPreco(
+                    valorTotal
+                );
+
+
+            if (carrinho.length === 0) {
+
+                lista.innerHTML = `
+
+                    <p style="
+                        color:#999;
+                        margin-top:20px;
+                    ">
+
+                        Seu carrinho está vazio.
+
+                    </p>
+
+                `;
+
+                return;
+
+            }
+
+
+            lista.innerHTML = "";
+
+
+            carrinho.forEach(function(item) {
+
+                const produto =
+                    produtos.find(
+                        p => p.id === item.produtoId
+                    );
+
+
+                if (!produto) {
+                    return;
+                }
+
+
+                const subtotal =
+                    produto.preco *
+                    item.quantidade;
+
+
+                lista.innerHTML += `
+
+                    <div class="cart-item">
+
+                        <strong>
+                            ${produto.nome}
+                        </strong>
+
+
+                        <div class="cart-item-size">
+
+                            Tamanho:
+                            ${item.tamanho}
+
                         </div>
 
 
-                        <button
-                            class="add-button"
+                        <div class="cart-item-price">
 
-                            onclick="
-                                adicionarProduto(${index})
-                            "
-                        >
+                            R$
+                            ${formatarPreco(subtotal)}
 
-                            ADICIONAR AO CARRINHO
+                        </div>
 
-                        </button>
 
+                        <div class="cart-actions">
+
+                            <button
+                                class="quantity-button"
+                                onclick="
+                                    diminuirQuantidade(
+                                        ${item.produtoId},
+                                        '${item.tamanho}'
+                                    )
+                                ">
+
+                                −
+
+                            </button>
+
+
+                            <span class="quantity">
+
+                                ${item.quantidade}
+
+                            </span>
+
+
+                            <button
+                                class="quantity-button"
+                                onclick="
+                                    aumentarQuantidade(
+                                        ${item.produtoId},
+                                        '${item.tamanho}'
+                                    )
+                                ">
+
+                                +
+
+                            </button>
+
+
+                            <button
+                                class="remove-button"
+                                onclick="
+                                    removerProduto(
+                                        ${item.produtoId},
+                                        '${item.tamanho}'
+                                    )
+                                ">
+
+                                🗑️
+
+                            </button>
+
+                        </div>
 
                     </div>
 
-                </div>
+                `;
 
-            `;
+            });
 
         }
-    );
-
-}
 
 
-/* =========================================================
-   BUSCA
-========================================================= */
+        /* =================================================
+           FINALIZAR PEDIDO
+        ================================================= */
 
-function filtrarProdutos() {
+        function finalizarPedido() {
 
-    const busca =
-        document
-            .getElementById("busca")
-            .value
-            .toLowerCase()
-            .trim();
+            if (carrinho.length === 0) {
 
-
-    const filtrados =
-        produtos.filter(
-            function(produto) {
-
-                const nome =
-                    produto.nome.toLowerCase();
-
-                const descricao =
-                    produto.descricao.toLowerCase();
-
-                const categoria =
-                    produto.categoria.toLowerCase();
-
-
-                const correspondeBusca =
-                    nome.includes(busca) ||
-                    descricao.includes(busca) ||
-                    categoria.includes(busca);
-
-
-                const correspondeCategoria =
-                    categoriaAtual === "todos" ||
-                    produto.categoria === categoriaAtual;
-
-
-                return (
-                    correspondeBusca &&
-                    correspondeCategoria
+                mostrarAviso(
+                    "Seu carrinho está vazio!"
                 );
+
+                return;
 
             }
-        );
 
 
-    mostrarProdutos(filtrados);
+            let mensagem =
+                "Olá! Quero fazer um pedido na Lvss.treet.%0A%0A";
 
-}
 
+            let total = 0;
 
-/* =========================================================
-   CATEGORIA
-========================================================= */
 
-function selecionarCategoria(
-    categoria,
-    botao
-) {
+            carrinho.forEach(function(item) {
 
-    categoriaAtual =
-        categoria;
+                const produto =
+                    produtos.find(
+                        p => p.id === item.produtoId
+                    );
 
 
-    document
-        .querySelectorAll(
-            ".category-button"
-        )
-        .forEach(
-            function(item) {
+                if (!produto) {
+                    return;
+                }
 
-                item.classList.remove(
-                    "active"
-                );
 
-            }
-        );
+                const subtotal =
+                    produto.preco *
+                    item.quantidade;
 
 
-    botao.classList.add(
-        "active"
-    );
+                mensagem +=
+                    "• " +
+                    produto.nome +
+                    "%0A" +
 
+                    "Tamanho: " +
+                    item.tamanho +
+                    "%0A" +
 
-    filtrarProdutos();
+                    "Quantidade: " +
+                    item.quantidade +
+                    "%0A" +
 
-}
+                    "Preço: R$ " +
+                    formatarPreco(subtotal) +
+                    "%0A%0A";
 
 
-/* =========================================================
-   FAVORITOS
-========================================================= */
+                total += subtotal;
 
-function alternarFavorito(index) {
+            });
 
-    const botao =
-        document.getElementById(
-            "favorito-" + index
-        );
-
-
-    botao.classList.toggle(
-        "active"
-    );
-
-
-    if (
-        botao.classList.contains(
-            "active"
-        )
-    ) {
-
-        botao.textContent =
-            "♥";
-
-    } else {
-
-        botao.textContent =
-            "♡";
-
-    }
-
-}
-
-
-/* =========================================================
-   TOAST
-========================================================= */
-
-function mostrarAviso(texto) {
-
-    const toast =
-        document.getElementById(
-            "toast"
-        );
-
-
-    toast.textContent =
-        texto;
-
-
-    toast.classList.add(
-        "show"
-    );
-
-
-    setTimeout(
-        function() {
-
-            toast.classList.remove(
-                "show"
-            );
-
-        },
-        2200
-    );
-
-}
-
-
-/* =========================================================
-   ABRIR CARRINHO
-========================================================= */
-
-function abrirCarrinho() {
-
-    document
-        .getElementById("carrinho")
-        .classList
-        .add("open");
-
-}
-
-
-/* =========================================================
-   FECHAR CARRINHO
-========================================================= */
-
-function fecharCarrinho() {
-
-    document
-        .getElementById("carrinho")
-        .classList
-        .remove("open");
-
-}
-
-
-/* =========================================================
-   ADICIONAR PRODUTO
-========================================================= */
-
-function adicionarProduto(index) {
-
-    const produto =
-        produtos[index];
-
-
-    const select =
-        document.getElementById(
-            "tamanho-" + index
-        );
-
-
-    if (!select) {
-        return;
-    }
-
-
-    const tamanho =
-        select.value;
-
-
-    if (!tamanho) {
-
-        alert(
-            "Escolha um tamanho antes de adicionar."
-        );
-
-        return;
-
-    }
-
-
-    if (
-        produto.estoque[tamanho] <= 0
-    ) {
-
-        alert(
-            "Esse tamanho está esgotado."
-        );
-
-        return;
-
-    }
-
-
-    produto.estoque[tamanho]--;
-
-
-    carrinho.push({
-
-        nome:
-            produto.nome,
-
-        preco:
-            produto.preco,
-
-        tamanho:
-            tamanho,
-
-        produtoIndex:
-            index,
-
-        quantidade:
-            1
-
-    });
-
-
-    salvarCarrinho();
-
-    atualizarCarrinho();
-
-    mostrarAviso(
-        "✓ Produto adicionado ao carrinho!"
-    );
-
-
-    /*
-       NÃO abre o carrinho.
-
-       O cliente continua
-       navegando normalmente.
-    */
-
-
-    filtrarProdutos();
-
-}
-
-
-/* =========================================================
-   ATUALIZAR CARRINHO
-========================================================= */
-
-function atualizarCarrinho() {
-
-    const lista =
-        document.getElementById(
-            "itensCarrinho"
-        );
-
-
-    const quantidadeElemento =
-        document.getElementById(
-            "quantidade"
-        );
-
-
-    const totalElemento =
-        document.getElementById(
-            "total"
-        );
-
-
-    const quantidadeTotal =
-        carrinho.reduce(
-            function(total, produto) {
-
-                return total +
-                    produto.quantidade;
-
-            },
-            0
-        );
-
-
-    quantidadeElemento.textContent =
-        quantidadeTotal;
-
-
-    if (
-        carrinho.length === 0
-    ) {
-
-        lista.innerHTML = `
-
-            <p style="color:#777;">
-
-                Seu carrinho está vazio.
-
-            </p>
-
-        `;
-
-
-        totalElemento.textContent =
-            "0,00";
-
-
-        salvarCarrinho();
-
-        return;
-
-    }
-
-
-    let total = 0;
-
-
-    lista.innerHTML = "";
-
-
-    carrinho.forEach(
-        function(produto, index) {
-
-            const subtotal =
-                produto.preco *
-                produto.quantidade;
-
-
-            total += subtotal;
-
-
-            lista.innerHTML += `
-
-                <div class="cart-item">
-
-
-                    <div class="cart-item-name">
-
-                        ${produto.nome}
-
-                    </div>
-
-
-                    <div class="cart-item-info">
-
-                        Tamanho:
-                        ${produto.tamanho}
-
-                    </div>
-
-
-                    <div class="cart-item-price">
-
-                        R$
-                        ${formatarPreco(subtotal)}
-
-                    </div>
-
-
-                    <div class="quantity-control">
-
-
-                        <button
-                            onclick="
-                                diminuirQuantidade(${index})
-                            "
-                        >
-                            −
-                        </button>
-
-
-                        <span>
-                            ${produto.quantidade}
-                        </span>
-
-
-                        <button
-                            onclick="
-                                aumentarQuantidade(${index})
-                            "
-                        >
-                            +
-                        </button>
-
-
-                    </div>
-
-
-                    <button
-                        class="remove-button"
-
-                        onclick="
-                            removerProduto(${index})
-                        "
-                    >
-
-                        🗑 Remover
-
-                    </button>
-
-
-                </div>
-
-            `;
-
-        }
-    );
-
-
-    totalElemento.textContent =
-        formatarPreco(total);
-
-
-    salvarCarrinho();
-
-}
-
-
-/* =========================================================
-   AUMENTAR QUANTIDADE
-========================================================= */
-
-function aumentarQuantidade(index) {
-
-    const item =
-        carrinho[index];
-
-
-    const produto =
-        produtos[item.produtoIndex];
-
-
-    if (
-        produto.estoque[item.tamanho]
-        <= 0
-    ) {
-
-        mostrarAviso(
-            "Não há mais estoque desse tamanho."
-        );
-
-        return;
-
-    }
-
-
-    produto.estoque[item.tamanho]--;
-
-
-    item.quantidade++;
-
-
-    salvarCarrinho();
-
-    atualizarCarrinho();
-
-}
-
-
-/* =========================================================
-   DIMINUIR QUANTIDADE
-========================================================= */
-
-function diminuirQuantidade(index) {
-
-    const item =
-        carrinho[index];
-
-
-    const produto =
-        produtos[item.produtoIndex];
-
-
-    if (
-        item.quantidade <= 1
-    ) {
-
-        removerProduto(index);
-
-        return;
-
-    }
-
-
-    item.quantidade--;
-
-
-    produto.estoque[item.tamanho]++;
-
-
-    salvarCarrinho();
-
-    atualizarCarrinho();
-
-}
-
-
-/* =========================================================
-   REMOVER PRODUTO
-========================================================= */
-
-function removerProduto(index) {
-
-    const item =
-        carrinho[index];
-
-
-    const produto =
-        produtos[item.produtoIndex];
-
-
-    produto.estoque[item.tamanho] +=
-        item.quantidade;
-
-
-    carrinho.splice(
-        index,
-        1
-    );
-
-
-    salvarCarrinho();
-
-    atualizarCarrinho();
-
-    filtrarProdutos();
-
-}
-
-
-/* =========================================================
-   CALCULAR TOTAL
-========================================================= */
-
-function calcularTotal() {
-
-    return carrinho.reduce(
-        function(total, item) {
-
-            return total +
-                (
-                    item.preco *
-                    item.quantidade
-                );
-
-        },
-        0
-    );
-
-}
-
-
-/* =========================================================
-   FINALIZAR PEDIDO
-========================================================= */
-
-function finalizarPedido() {
-
-    if (
-        carrinho.length === 0
-    ) {
-
-        alert(
-            "Seu carrinho está vazio!"
-        );
-
-        return;
-
-    }
-
-
-    let mensagem =
-        "Olá! Quero fazer um pedido na Lvss.treet.\n\n";
-
-
-    carrinho.forEach(
-        function(item) {
 
             mensagem +=
-                "• " +
-                item.nome +
-                "\n" +
-                "  Tamanho: " +
-                item.tamanho +
-                "\n" +
-                "  Quantidade: " +
-                item.quantidade +
-                "\n" +
-                "  Preço: R$ " +
-                formatarPreco(
-                    item.preco *
-                    item.quantidade
-                ) +
-                "\n\n";
+                "*Total: R$ " +
+                formatarPreco(total) +
+                "*";
+
+
+            window.open(
+
+                "https://wa.me/" +
+                whatsappNumero +
+                "?text=" +
+                mensagem,
+
+                "_blank"
+
+            );
 
         }
-    );
 
 
-    mensagem +=
-        "TOTAL: R$ " +
-        formatarPreco(
-            calcularTotal()
-        );
+        /* =================================================
+           CONFIGURAR INSTAGRAM
+        ================================================= */
+
+        document.getElementById(
+            "instagram"
+        ).href =
+            "https://www.instagram.com/" +
+            instagramNome +
+            "/";
 
 
-    const mensagemCodificada =
-        encodeURIComponent(
-            mensagem
-        );
+        /* =================================================
+           CONFIGURAR WHATSAPP
+        ================================================= */
+
+        document.getElementById(
+            "whatsapp"
+        ).href =
+            "https://wa.me/" +
+            whatsappNumero;
 
 
-    window.open(
+        /* =================================================
+           INICIAR
+        ================================================= */
 
-        "https://wa.me/" +
-        whatsappNumero +
-        "?text=" +
-        mensagemCodificada,
+        mostrarProdutos();
 
-        "_blank"
+        atualizarCarrinho();
 
-    );
-
-}
-
-
-/* =========================================================
-   WHATSAPP
-========================================================= */
-
-document.getElementById(
-    "whatsapp"
-).href =
-
-    "https://wa.me/" +
-    whatsappNumero;
-
-
-/* =========================================================
-   INSTAGRAM
-========================================================= */
-
-document.getElementById(
-    "instagram"
-).href =
-
-    "https://www.instagram.com/" +
-    instagramNome +
-    "/";
-
-
-/* =========================================================
-   INICIALIZAR
-========================================================= */
-
-carregarCarrinho();
-
-mostrarProdutos();
-
-atualizarCarrinho();
-
-</script>
+    </script>
 
 </body>
 
