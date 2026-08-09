@@ -1,236 +1,3973 @@
+mude isso apenas para uma loja de tenis com tamanho 36 ao 41 ```html
+
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
+
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lvss.treet | Exclusivo Nike TN</title>
+
+
+
+    <title>Lvss.treet | Streetwear</title>
+
+
+
     <style>
-        :root {
-            --bg-color: #0b0b0b;
-            --card-bg: #141414;
-            --accent-purple: #8a2be2;
-            --text-white: #ffffff;
-            --text-gray: #a0a0a0;
-        }
+
+
 
         * {
+
             margin: 0;
+
             padding: 0;
+
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+
+            font-family: Arial, Helvetica, sans-serif;
+
         }
+
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-white);
+
+            background: #070707;
+
+            color: #ffffff;
+
         }
 
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            border-bottom: 1px solid #222;
-            background-color: rgba(11, 11, 11, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+
+
+        /* =========================
+
+           CORES
+
+        ========================= */
+
+
+
+        :root {
+
+            --roxo: #7b2cff;
+
+            --roxo-escuro: #4b1599;
+
+            --roxo-claro: #a66cff;
+
+            --preto: #070707;
+
+            --card: #111111;
+
+            --cinza: #999999;
+
+            --borda: #292929;
+
+            --branco: #ffffff;
+
+            --verde: #25d366;
+
+            --vermelho: #ff3b3b;
+
         }
+
+
+
+
+
+        /* =========================
+
+           CABEÇALHO
+
+        ========================= */
+
+
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+
+
+            background: rgba(7, 7, 7, 0.96);
+
+            backdrop-filter: blur(10px);
+
+
+
+            border-bottom: 1px solid var(--borda);
+
+
+
+            padding: 18px 6%;
+
+
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            text-transform: lowercase;
+
+            font-size: 27px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
         }
+
+
 
         .logo span {
-            color: var(--accent-purple);
+
+            color: var(--roxo);
+
         }
+
+
+
+        nav {
+
+            display: flex;
+
+            gap: 25px;
+
+        }
+
+
 
         nav a {
-            color: var(--text-gray);
+
+            color: white;
+
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
-            transition: 0.3s;
+
+            font-weight: bold;
+
+            transition: 0.2s;
+
         }
+
+
 
         nav a:hover {
-            color: var(--text-white);
+
+            color: var(--roxo-claro);
+
         }
 
-        /* Banner Principal */
-        .hero {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: radial-gradient(circle, rgba(138,43,226,0.15) 0%, rgba(11,11,11,1) 70%);
+
+
+        .cart-button {
+
+            border: none;
+
+            background: var(--roxo);
+
+            color: white;
+
+
+
+            padding: 11px 16px;
+
+
+
+            border-radius: 8px;
+
+
+
+            cursor: pointer;
+
+
+
+            font-weight: bold;
+
+
+
+            transition: 0.2s;
+
         }
+
+
+
+        .cart-button:hover {
+
+            background: var(--roxo-claro);
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+
+
+        /* =========================
+
+           HERO
+
+        ========================= */
+
+
+
+        .hero {
+
+            min-height: 78vh;
+
+
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+
+
+            text-align: center;
+
+
+
+            padding: 40px 20px;
+
+
+
+            background:
+
+                radial-gradient(
+
+                    circle at center,
+
+                    #35106b 0%,
+
+                    #160827 30%,
+
+                    #070707 70%
+
+                );
+
+        }
+
+
 
         .hero h1 {
-            font-size: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
+
+            font-size: clamp(50px, 9vw, 105px);
+
+            letter-spacing: 5px;
+
+            font-weight: 900;
+
         }
+
+
+
+        .hero h1 span {
+
+            color: var(--roxo);
+
+        }
+
+
 
         .hero p {
-            color: var(--text-gray);
-            margin-bottom: 25px;
-            font-size: 1.1rem;
+
+            color: #bdbdbd;
+
+            margin: 20px 0 30px;
+
+            font-size: 18px;
+
+            letter-spacing: 2px;
+
         }
 
-        .btn-main {
-            background-color: var(--accent-purple);
-            color: var(--text-white);
-            padding: 12px 30px;
-            border: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            letter-spacing: 1px;
-            transition: 0.3s;
+
+
+        .button {
+
+            display: inline-block;
+
+
+
+            background: var(--roxo);
+
+            color: white;
+
+
+
+            padding: 14px 28px;
+
+
+
+            border-radius: 8px;
+
+
+
             text-decoration: none;
-        }
 
-        .btn-main:hover {
-            opacity: 0.85;
-            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
-        }
 
-        /* Vitrine de Produtos */
-        .catalog {
-            padding: 50px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
 
-        .section-title {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-            border-left: 3px solid var(--accent-purple);
-            padding-left: 10px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid #222;
-            padding: 15px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            border-color: var(--accent-purple);
-        }
-
-        .card img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .card .price {
-            color: var(--accent-purple);
             font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
+
+
+
+            transition: 0.2s;
+
         }
 
-        .card button {
-            width: 100%;
-            background: transparent;
-            border: 1px solid var(--text-white);
-            color: var(--text-white);
-            padding: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
+
+
+        .button:hover {
+
+            background: var(--roxo-claro);
+
+            transform: translateY(-2px);
+
         }
 
-        .card button:hover {
-            background-color: var(--text-white);
-            color: var(--bg-color);
+
+
+
+
+        /* =========================
+
+           SEÇÕES
+
+        ========================= */
+
+
+
+        section {
+
+            padding: 80px 6%;
+
         }
 
-        /* Rodapé */
-        footer {
+
+
+        .title {
+
             text-align: center;
-            padding: 30px;
-            border-top: 1px solid #222;
-            color: var(--text-gray);
-            font-size: 0.8rem;
-            margin-top: 50px;
+
+            margin-bottom: 45px;
+
         }
+
+
+
+        .title h2 {
+
+            font-size: 38px;
+
+        }
+
+
+
+        .title p {
+
+            color: var(--cinza);
+
+            margin-top: 10px;
+
+        }
+
+
+
+
+
+        /* =========================
+
+           PRODUTOS
+
+        ========================= */
+
+
+
+        .products {
+
+            display: grid;
+
+
+
+            grid-template-columns:
+
+                repeat(auto-fit, minmax(240px, 1fr));
+
+
+
+            gap: 25px;
+
+        }
+
+
+
+        .product {
+
+            background: var(--card);
+
+
+
+            border: 1px solid var(--borda);
+
+
+
+            border-radius: 12px;
+
+
+
+            overflow: hidden;
+
+
+
+            transition: 0.3s;
+
+        }
+
+
+
+        .product:hover {
+
+            transform: translateY(-6px);
+
+            border-color: var(--roxo);
+
+            box-shadow: 0 10px 30px rgba(123, 44, 255, 0.12);
+
+        }
+
+
+
+        .product img {
+
+            width: 100%;
+
+            height: 300px;
+
+
+
+            object-fit: cover;
+
+
+
+            display: block;
+
+
+
+            background: #181818;
+
+        }
+
+
+
+        .product-info {
+
+            padding: 20px;
+
+        }
+
+
+
+        .product-info h3 {
+
+            margin-bottom: 8px;
+
+            font-size: 19px;
+
+        }
+
+
+
+        .product-info p {
+
+            color: var(--cinza);
+
+            margin-bottom: 12px;
+
+            line-height: 1.5;
+
+        }
+
+
+
+        .price {
+
+            color: var(--roxo-claro);
+
+
+
+            font-size: 22px;
+
+
+
+            font-weight: bold;
+
+
+
+            margin-bottom: 16px;
+
+        }
+
+
+
+
+
+        /* =========================
+
+           TAMANHOS
+
+        ========================= */
+
+
+
+        .size-title {
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+        }
+
+
+
+        .sizes {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+
+        .size-button {
+
+            background: #1b1b1b;
+
+            color: white;
+
+
+
+            border: 1px solid #444;
+
+
+
+            padding: 8px 13px;
+
+
+
+            border-radius: 6px;
+
+
+
+            cursor: pointer;
+
+
+
+            font-weight: bold;
+
+
+
+            transition: 0.2s;
+
+        }
+
+
+
+        .size-button:hover {
+
+            border-color: var(--roxo);
+
+        }
+
+
+
+        .size-button.selected {
+
+            background: var(--roxo);
+
+            border-color: var(--roxo);
+
+        }
+
+
+
+        .size-button.disabled {
+
+            opacity: 0.35;
+
+            cursor: not-allowed;
+
+            text-decoration: line-through;
+
+        }
+
+
+
+        .stock {
+
+            font-size: 12px;
+
+            color: #777;
+
+            margin-bottom: 12px;
+
+        }
+
+
+
+
+
+        /* =========================
+
+           BOTÃO ADICIONAR
+
+        ========================= */
+
+
+
+        .add-button {
+
+            width: 100%;
+
+
+
+            border: none;
+
+
+
+            background: var(--roxo);
+
+
+
+            color: white;
+
+
+
+            padding: 12px;
+
+
+
+            border-radius: 7px;
+
+
+
+            cursor: pointer;
+
+
+
+            font-weight: bold;
+
+
+
+            transition: 0.2s;
+
+        }
+
+
+
+        .add-button:hover {
+
+            background: var(--roxo-claro);
+
+        }
+
+
+
+        .add-button:disabled {
+
+            background: #333;
+
+            color: #777;
+
+            cursor: not-allowed;
+
+        }
+
+
+
+
+
+        /* =========================
+
+           SOBRE
+
+        ========================= */
+
+
+
+        .about {
+
+            background: #0d0d0d;
+
+            text-align: center;
+
+        }
+
+
+
+        .about p {
+
+            max-width: 750px;
+
+
+
+            margin: auto;
+
+
+
+            color: #aaa;
+
+
+
+            line-height: 1.8;
+
+
+
+            font-size: 16px;
+
+        }
+
+
+
+
+
+        /* =========================
+
+           CONTATO
+
+        ========================= */
+
+
+
+        .contact {
+
+            text-align: center;
+
+        }
+
+
+
+        .contact-buttons {
+
+            display: flex;
+
+
+
+            justify-content: center;
+
+
+
+            gap: 15px;
+
+
+
+            flex-wrap: wrap;
+
+
+
+            margin-top: 25px;
+
+        }
+
+
+
+        .whatsapp {
+
+            background: var(--verde);
+
+        }
+
+
+
+        .whatsapp:hover {
+
+            background: #20bd5b;
+
+        }
+
+
+
+        .instagram {
+
+            background: var(--roxo);
+
+        }
+
+
+
+
+
+        /* =========================
+
+           RODAPÉ
+
+        ========================= */
+
+
+
+        footer {
+
+            border-top: 1px solid var(--borda);
+
+
+
+            padding: 30px;
+
+
+
+            text-align: center;
+
+
+
+            color: #777;
+
+        }
+
+
+
+        footer span {
+
+            color: var(--roxo-claro);
+
+        }
+
+
+
+
+
+        /* =========================
+
+           CARRINHO
+
+        ========================= */
+
+
+
+        .cart {
+
+            position: fixed;
+
+
+
+            top: 0;
+
+            right: -430px;
+
+
+
+            width: 420px;
+
+            max-width: 100%;
+
+
+
+            height: 100vh;
+
+
+
+            background: #101010;
+
+
+
+            z-index: 2000;
+
+
+
+            padding: 25px;
+
+
+
+            transition: 0.4s;
+
+
+
+            box-shadow:
+
+                -10px 0 40px rgba(0,0,0,0.6);
+
+
+
+            overflow-y: auto;
+
+        }
+
+
+
+        .cart.open {
+
+            right: 0;
+
+        }
+
+
+
+        .cart-header {
+
+            display: flex;
+
+
+
+            align-items: center;
+
+
+
+            justify-content: space-between;
+
+
+
+            border-bottom: 1px solid #333;
+
+
+
+            padding-bottom: 15px;
+
+        }
+
+
+
+        .cart-header h2 {
+
+            font-size: 25px;
+
+        }
+
+
+
+        .close-button {
+
+            background: none;
+
+
+
+            border: none;
+
+
+
+            color: white;
+
+
+
+            font-size: 32px;
+
+
+
+            cursor: pointer;
+
+        }
+
+
+
+        .cart-items {
+
+            margin-top: 20px;
+
+        }
+
+
+
+        .cart-item {
+
+            background: #1a1a1a;
+
+
+
+            padding: 15px;
+
+
+
+            border-radius: 8px;
+
+
+
+            margin-bottom: 10px;
+
+
+
+            border: 1px solid #292929;
+
+        }
+
+
+
+        .cart-item strong {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+        }
+
+
+
+        .cart-item-size {
+
+            color: #aaa;
+
+            font-size: 14px;
+
+        }
+
+
+
+        .cart-item-price {
+
+            color: var(--roxo-claro);
+
+            font-weight: bold;
+
+            margin-top: 8px;
+
+        }
+
+
+
+        .cart-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 12px;
+
+        }
+
+
+
+        .quantity-button {
+
+            width: 30px;
+
+            height: 30px;
+
+
+
+            border: none;
+
+
+
+            background: var(--roxo);
+
+
+
+            color: white;
+
+
+
+            border-radius: 5px;
+
+
+
+            cursor: pointer;
+
+
+
+            font-weight: bold;
+
+        }
+
+
+
+        .quantity {
+
+            min-width: 25px;
+
+            text-align: center;
+
+        }
+
+
+
+        .remove-button {
+
+            margin-left: auto;
+
+
+
+            background: #333;
+
+
+
+            border: none;
+
+
+
+            color: white;
+
+
+
+            padding: 7px 10px;
+
+
+
+            border-radius: 5px;
+
+
+
+            cursor: pointer;
+
+        }
+
+
+
+        .remove-button:hover {
+
+            background: var(--vermelho);
+
+        }
+
+
+
+        .total {
+
+            margin-top: 25px;
+
+
+
+            padding-top: 20px;
+
+
+
+            border-top: 1px solid #333;
+
+
+
+            font-size: 22px;
+
+
+
+            font-weight: bold;
+
+        }
+
+
+
+        .checkout {
+
+            width: 100%;
+
+
+
+            margin-top: 20px;
+
+
+
+            padding: 14px;
+
+
+
+            background: var(--verde);
+
+
+
+            color: white;
+
+
+
+            border: none;
+
+
+
+            border-radius: 7px;
+
+
+
+            cursor: pointer;
+
+
+
+            font-weight: bold;
+
+
+
+            font-size: 15px;
+
+        }
+
+
+
+        .checkout:hover {
+
+            background: #20bd5b;
+
+        }
+
+
+
+
+
+        /* =========================
+
+           AVISO
+
+        ========================= */
+
+
+
+        .notice {
+
+            position: fixed;
+
+
+
+            bottom: 25px;
+
+            left: 50%;
+
+
+
+            transform: translateX(-50%) translateY(100px);
+
+
+
+            background: #181818;
+
+
+
+            border: 1px solid var(--roxo);
+
+
+
+            color: white;
+
+
+
+            padding: 14px 20px;
+
+
+
+            border-radius: 8px;
+
+
+
+            z-index: 5000;
+
+
+
+            opacity: 0;
+
+
+
+            transition: 0.3s;
+
+        }
+
+
+
+        .notice.show {
+
+            transform: translateX(-50%) translateY(0);
+
+            opacity: 1;
+
+        }
+
+
+
+
+
+        /* =========================
+
+           CELULAR
+
+        ========================= */
+
+
+
+        @media (max-width: 700px) {
+
+
+
+            nav {
+
+                display: none;
+
+            }
+
+
+
+            header {
+
+                padding: 16px 5%;
+
+            }
+
+
+
+            .logo {
+
+                font-size: 22px;
+
+            }
+
+
+
+            .cart-button {
+
+                padding: 9px 12px;
+
+            }
+
+
+
+            section {
+
+                padding: 60px 5%;
+
+            }
+
+
+
+            .title h2 {
+
+                font-size: 30px;
+
+            }
+
+
+
+            .hero {
+
+                min-height: 70vh;
+
+            }
+
+
+
+            .hero p {
+
+                font-size: 14px;
+
+            }
+
+
+
+            .cart {
+
+                width: 100%;
+
+            }
+
+
+
+            .product img {
+
+                height: 280px;
+
+            }
+
+        }
+
+
+
     </style>
+
 </head>
+
+
+
+
+
 <body>
 
+
+
+
+
+    <!-- =========================
+
+         CABEÇALHO
+
+    ========================== -->
+
+
+
     <header>
-        <div class="logo">lvss<span>.</span>treet</div>
-        <nav>
-            <a href="#">Drop</a>
-            <a href="#">Coleção</a>
-            <a href="#">Contato</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h1>Nike TN Air Max Plus</h1>
-        <p>A cultura do Tuned Air no seu feet.</p>
-        <a href="#catalog" class="btn-main">Ver Modelos</a>
-    </section>
 
-    <section class="catalog" id="catalog">
-        <h2 class="section-title">Destaques</h2>
-        <div class="grid">
-            
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200/141414/8a2be2?text=Nike+TN+Voltage+Purple" alt="Nike TN Voltage Purple">
-                <h3>Nike TN Air Max Plus "Voltage Purple"</h3>
-                <p class="price">R$ 1.299,90</p>
-                <button>Garantir o seu</button>
-            </div>
 
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200/141414/ffffff?text=Nike+TN+Triple+Black" alt="Nike TN Triple Black">
-                <h3>Nike TN Air Max Plus "Triple Black"</h3>
-                <p class="price">R$ 1.199,90</p>
-                <button>Garantir o seu</button>
-            </div>
+        <div class="logo">
 
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200/141414/8a2be2?text=Nike+TN+OG+Hyper+Blue" alt="Nike TN OG">
-                <h3>Nike TN Air Max Plus "OG Gradient"</h3>
-                <p class="price">R$ 1.399,90</p>
-                <button>Garantir o seu</button>
-            </div>
+            Lvss<span>.treet</span>
 
         </div>
+
+
+
+        <nav>
+
+            <a href="#inicio">Início</a>
+
+            <a href="#produtos">Produtos</a>
+
+            <a href="#sobre">Sobre</a>
+
+            <a href="#contato">Contato</a>
+
+        </nav>
+
+
+
+        <button
+
+            class="cart-button"
+
+            onclick="abrirCarrinho()">
+
+
+
+            🛒 Carrinho
+
+            (<span id="quantidade">0</span>)
+
+
+
+        </button>
+
+
+
+    </header>
+
+
+
+
+
+    <!-- =========================
+
+         INÍCIO
+
+    ========================== -->
+
+
+
+    <section
+
+        class="hero"
+
+        id="inicio">
+
+
+
+        <div>
+
+
+
+            <h1>
+
+                LVSS<span>.TREET</span>
+
+            </h1>
+
+
+
+            <p>
+
+                STREETWEAR • ATITUDE • PERSONALIDADE
+
+            </p>
+
+
+
+            <a
+
+                href="#produtos"
+
+                class="button">
+
+
+
+                VER PRODUTOS
+
+
+
+            </a>
+
+
+
+        </div>
+
+
+
     </section>
 
+
+
+
+
+    <!-- =========================
+
+         PRODUTOS
+
+    ========================== -->
+
+
+
+    <section id="produtos">
+
+
+
+        <div class="title">
+
+
+
+            <h2>
+
+                NOSSOS PRODUTOS
+
+            </h2>
+
+
+
+            <p>
+
+                Escolha seu produto e tamanho.
+
+            </p>
+
+
+
+        </div>
+
+
+
+        <div
+
+            class="products"
+
+            id="listaProdutos">
+
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+    <!-- =========================
+
+         SOBRE
+
+    ========================== -->
+
+
+
+    <section
+
+        class="about"
+
+        id="sobre">
+
+
+
+        <div class="title">
+
+
+
+            <h2>
+
+                SOBRE A LVSS.TREET
+
+            </h2>
+
+
+
+        </div>
+
+
+
+        <p>
+
+
+
+            A Lvss.treet nasceu com a ideia de criar
+
+            uma marca streetwear com atitude,
+
+            personalidade e estilo próprio.
+
+
+
+            Nosso objetivo é trazer produtos
+
+            que representem personalidade,
+
+            estilo e autenticidade.
+
+
+
+        </p>
+
+
+
+    </section>
+
+
+
+
+
+    <!-- =========================
+
+         CONTATO
+
+    ========================== -->
+
+
+
+    <section
+
+        class="contact"
+
+        id="contato">
+
+
+
+        <div class="title">
+
+
+
+            <h2>
+
+                FALE CONOSCO
+
+            </h2>
+
+
+
+            <p>
+
+                Entre em contato com a Lvss.treet.
+
+            </p>
+
+
+
+        </div>
+
+
+
+        <div class="contact-buttons">
+
+
+
+            <a
+
+                id="whatsapp"
+
+                class="button whatsapp"
+
+                target="_blank">
+
+
+
+                📱 WHATSAPP
+
+
+
+            </a>
+
+
+
+            <a
+
+                id="instagram"
+
+                class="button instagram"
+
+                target="_blank">
+
+
+
+                📸 INSTAGRAM
+
+
+
+            </a>
+
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+    <!-- =========================
+
+         RODAPÉ
+
+    ========================== -->
+
+
+
     <footer>
-        <p>&copy; 2026 lvss.treet — Todos os direitos reservados.</p>
+
+
+
+        © 2026
+
+
+
+        <span>
+
+            Lvss.treet
+
+        </span>
+
+
+
+        — Todos os direitos reservados.
+
+
+
     </footer>
 
+
+
+
+
+    <!-- =========================
+
+         CARRINHO
+
+    ========================== -->
+
+
+
+    <div
+
+        class="cart"
+
+        id="carrinho">
+
+
+
+        <div class="cart-header">
+
+
+
+            <h2>
+
+                🛒 Carrinho
+
+            </h2>
+
+
+
+            <button
+
+                class="close-button"
+
+                onclick="fecharCarrinho()">
+
+
+
+                ×
+
+
+
+            </button>
+
+
+
+        </div>
+
+
+
+
+
+        <div
+
+            class="cart-items"
+
+            id="itensCarrinho">
+
+
+
+            <p style="color:#999;margin-top:20px;">
+
+
+
+                Seu carrinho está vazio.
+
+
+
+            </p>
+
+
+
+        </div>
+
+
+
+
+
+        <div class="total">
+
+
+
+            Total:
+
+
+
+            R$
+
+
+
+            <span id="total">
+
+                0,00
+
+            </span>
+
+
+
+        </div>
+
+
+
+
+
+        <button
+
+            class="checkout"
+
+            onclick="finalizarPedido()">
+
+
+
+            📲 FINALIZAR PEDIDO
+
+
+
+        </button>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- AVISO -->
+
+
+
+    <div
+
+        class="notice"
+
+        id="notice">
+
+
+
+    </div>
+
+
+
+
+
+    <script>
+
+
+
+
+
+        /* =================================================
+
+           CONFIGURAÇÕES
+
+        ================================================= */
+
+
+
+        const whatsappNumero = "554991221247";
+
+
+
+        const instagramNome = "lvss.treet";
+
+
+
+
+
+        /* =================================================
+
+           PRODUTOS
+
+
+
+           IMPORTANTE:
+
+
+
+           Para imagens da sua pasta:
+
+
+
+           imagens/nome-da-imagem.jpg
+
+
+
+           Exemplo:
+
+
+
+           imagens/bone-nike.jpg
+
+
+
+        ================================================= */
+
+
+
+        const produtos = [
+
+
+
+            {
+
+                id: 1,
+
+
+
+                nome: "Moletom Nike Nsw Club Ft Official Preto",
+
+
+
+                descricao: "Moletom Nike estilo streetwear.",
+
+
+
+                preco: 89.90,
+
+
+
+                imagem: "imagens/moletom-nike.jpg",
+
+
+
+                tamanhos: ["P", "M", "G", "GG"],
+
+
+
+                estoque: {
+
+                    P: 5,
+
+                    M: 10,
+
+                    G: 8,
+
+                    GG: 4
+
+                }
+
+            },
+
+
+
+
+
+            {
+
+                id: 2,
+
+
+
+                nome: "Camiseta Lvss Purple",
+
+
+
+                descricao: "Edição especial roxa.",
+
+
+
+                preco: 99.90,
+
+
+
+                imagem: "https://placehold.co/600x600/35105c/ffffff?text=LVSS+PURPLE",
+
+
+
+                tamanhos: ["P", "M", "G", "GG"],
+
+
+
+                estoque: {
+
+                    P: 5,
+
+                    M: 10,
+
+                    G: 8,
+
+                    GG: 4
+
+                }
+
+            },
+
+
+
+
+
+            {
+
+                id: 3,
+
+
+
+                nome: "Moletom Lvss",
+
+
+
+                descricao: "Moletom streetwear.",
+
+
+
+                preco: 159.90,
+
+
+
+                imagem: "https://placehold.co/600x600/181818/ffffff?text=LVSS+HOODIE",
+
+
+
+                tamanhos: ["P", "M", "G", "GG"],
+
+
+
+                estoque: {
+
+                    P: 3,
+
+                    M: 7,
+
+                    G: 5,
+
+                    GG: 3
+
+                }
+
+            },
+
+
+
+
+
+            {
+
+                id: 4,
+
+
+
+                nome: "Boné Lvss",
+
+
+
+                descricao: "Boné streetwear.",
+
+
+
+                preco: 79.90,
+
+
+
+                imagem: "imagens/bone-nike.jpg",
+
+
+
+                tamanhos: ["Único"],
+
+
+
+                estoque: {
+
+                    "Único": 10
+
+                }
+
+            },
+
+
+
+
+
+            {
+
+                id: 5,
+
+
+
+                nome: "Tênis Lvss Street",
+
+
+
+                descricao: "Tênis para completar o visual.",
+
+
+
+                preco: 249.90,
+
+
+
+                imagem: "https://placehold.co/600x600/252525/ffffff?text=LVSS+SNEAKER",
+
+
+
+                tamanhos: ["P", "M", "G", "GG"],
+
+
+
+                estoque: {
+
+                    P: 2,
+
+                    M: 5,
+
+                    G: 4,
+
+                    GG: 2
+
+                }
+
+            }
+
+
+
+        ];
+
+
+
+
+
+        /* =================================================
+
+           CARRINHO
+
+        ================================================= */
+
+
+
+        let carrinho = [];
+
+
+
+
+
+        /* Tamanhos escolhidos */
+
+
+
+        let tamanhosSelecionados = {};
+
+
+
+
+
+        /* =================================================
+
+           FORMATAR PREÇO
+
+        ================================================= */
+
+
+
+        function formatarPreco(valor) {
+
+
+
+            return valor
+
+                .toFixed(2)
+
+                .replace(".", ",");
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           AVISO
+
+        ================================================= */
+
+
+
+        function mostrarAviso(texto) {
+
+
+
+            const aviso =
+
+                document.getElementById("notice");
+
+
+
+            aviso.textContent = texto;
+
+
+
+            aviso.classList.add("show");
+
+
+
+            setTimeout(function() {
+
+
+
+                aviso.classList.remove("show");
+
+
+
+            }, 2500);
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           MOSTRAR PRODUTOS
+
+        ================================================= */
+
+
+
+        function mostrarProdutos() {
+
+
+
+            const lista =
+
+                document.getElementById("listaProdutos");
+
+
+
+            lista.innerHTML = "";
+
+
+
+
+
+            produtos.forEach(function(produto) {
+
+
+
+                tamanhosSelecionados[produto.id] =
+
+                    produto.tamanhos[0];
+
+
+
+
+
+                let tamanhosHTML = "";
+
+
+
+
+
+                produto.tamanhos.forEach(function(tamanho) {
+
+
+
+                    const estoque =
+
+                        produto.estoque[tamanho];
+
+
+
+                    const semEstoque =
+
+                        estoque <= 0;
+
+
+
+
+
+                    tamanhosHTML += `
+
+
+
+                        <button
+
+                            type="button"
+
+                            class="size-button
+
+                            ${tamanho === produto.tamanhos[0] ? "selected" : ""}
+
+                            ${semEstoque ? "disabled" : ""}"
+
+
+
+                            ${semEstoque ? "disabled" : ""}
+
+
+
+                            onclick="
+
+                                selecionarTamanho(
+
+                                    ${produto.id},
+
+                                    '${tamanho}'
+
+                                )
+
+                            ">
+
+
+
+                            ${tamanho}
+
+
+
+                        </button>
+
+
+
+                    `;
+
+
+
+                });
+
+
+
+
+
+                const primeiroTamanho =
+
+                    produto.tamanhos[0];
+
+
+
+
+
+                const estoqueInicial =
+
+                    produto.estoque[primeiroTamanho];
+
+
+
+
+
+                lista.innerHTML += `
+
+
+
+                    <div class="product">
+
+
+
+                        <img
+
+                            src="${produto.imagem}"
+
+                            alt="${produto.nome}"
+
+                            onerror="this.src='https://placehold.co/600x600/111111/ffffff?text=SEM+IMAGEM'"
+
+                        >
+
+
+
+                        <div class="product-info">
+
+
+
+                            <h3>
+
+                                ${produto.nome}
+
+                            </h3>
+
+
+
+                            <p>
+
+                                ${produto.descricao}
+
+                            </p>
+
+
+
+                            <div class="price">
+
+
+
+                                R$
+
+                                ${formatarPreco(produto.preco)}
+
+
+
+                            </div>
+
+
+
+
+
+                            <div class="size-title">
+
+
+
+                                TAMANHO:
+
+
+
+                            </div>
+
+
+
+
+
+                            <div
+
+                                class="sizes"
+
+                                id="tamanhos-${produto.id}">
+
+
+
+                                ${tamanhosHTML}
+
+
+
+                            </div>
+
+
+
+
+
+                            <div
+
+                                class="stock"
+
+                                id="estoque-${produto.id}">
+
+
+
+                                Estoque:
+
+                                ${estoqueInicial}
+
+                                unidade(s)
+
+
+
+                            </div>
+
+
+
+
+
+                            <button
+
+                                class="add-button"
+
+
+
+                                id="add-${produto.id}"
+
+
+
+                                onclick="
+
+                                    adicionarProduto(
+
+                                        ${produto.id}
+
+                                    )
+
+                                ">
+
+
+
+                                ADICIONAR AO CARRINHO
+
+
+
+                            </button>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                `;
+
+
+
+            });
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           SELECIONAR TAMANHO
+
+        ================================================= */
+
+
+
+        function selecionarTamanho(
+
+            produtoId,
+
+            tamanho
+
+        ) {
+
+
+
+            const produto =
+
+                produtos.find(
+
+                    p => p.id === produtoId
+
+                );
+
+
+
+
+
+            if (!produto) {
+
+                return;
+
+            }
+
+
+
+
+
+            if (produto.estoque[tamanho] <= 0) {
+
+
+
+                mostrarAviso(
+
+                    "Esse tamanho está esgotado."
+
+                );
+
+
+
+                return;
+
+            }
+
+
+
+
+
+            tamanhosSelecionados[produtoId] =
+
+                tamanho;
+
+
+
+
+
+            const container =
+
+                document.getElementById(
+
+                    "tamanhos-" + produtoId
+
+                );
+
+
+
+
+
+            const botoes =
+
+                container.querySelectorAll(
+
+                    ".size-button"
+
+                );
+
+
+
+
+
+            botoes.forEach(function(botao) {
+
+
+
+                botao.classList.remove(
+
+                    "selected"
+
+                );
+
+
+
+            });
+
+
+
+
+
+            botoes.forEach(function(botao) {
+
+
+
+                if (
+
+                    botao.textContent.trim()
+
+                    === tamanho
+
+                ) {
+
+
+
+                    botao.classList.add(
+
+                        "selected"
+
+                    );
+
+
+
+                }
+
+
+
+            });
+
+
+
+
+
+            atualizarEstoqueVisual(
+
+                produtoId
+
+            );
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           ATUALIZAR ESTOQUE VISUAL
+
+        ================================================= */
+
+
+
+        function atualizarEstoqueVisual(
+
+            produtoId
+
+        ) {
+
+
+
+            const produto =
+
+                produtos.find(
+
+                    p => p.id === produtoId
+
+                );
+
+
+
+
+
+            if (!produto) {
+
+                return;
+
+            }
+
+
+
+
+
+            const tamanho =
+
+                tamanhosSelecionados[produtoId];
+
+
+
+
+
+            const quantidade =
+
+                produto.estoque[tamanho];
+
+
+
+
+
+            document.getElementById(
+
+                "estoque-" + produtoId
+
+            ).textContent =
+
+                "Estoque: " +
+
+                quantidade +
+
+                " unidade(s)";
+
+
+
+
+
+            const botao =
+
+                document.getElementById(
+
+                    "add-" + produtoId
+
+                );
+
+
+
+
+
+            if (quantidade <= 0) {
+
+
+
+                botao.disabled = true;
+
+
+
+                botao.textContent =
+
+                    "TAMANHO ESGOTADO";
+
+
+
+            } else {
+
+
+
+                botao.disabled = false;
+
+
+
+                botao.textContent =
+
+                    "ADICIONAR AO CARRINHO";
+
+
+
+            }
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           ADICIONAR AO CARRINHO
+
+        ================================================= */
+
+
+
+        function adicionarProduto(
+
+            produtoId
+
+        ) {
+
+
+
+            const produto =
+
+                produtos.find(
+
+                    p => p.id === produtoId
+
+                );
+
+
+
+
+
+            if (!produto) {
+
+                return;
+
+            }
+
+
+
+
+
+            const tamanho =
+
+                tamanhosSelecionados[produtoId];
+
+
+
+
+
+            if (!tamanho) {
+
+
+
+                mostrarAviso(
+
+                    "Escolha um tamanho."
+
+                );
+
+
+
+                return;
+
+
+
+            }
+
+
+
+
+
+            if (produto.estoque[tamanho] <= 0) {
+
+
+
+                mostrarAviso(
+
+                    "Esse tamanho está esgotado."
+
+                );
+
+
+
+                return;
+
+
+
+            }
+
+
+
+
+
+            const itemExistente =
+
+                carrinho.find(
+
+                    item =>
+
+                        item.produtoId === produtoId &&
+
+                        item.tamanho === tamanho
+
+                );
+
+
+
+
+
+            if (itemExistente) {
+
+
+
+                if (
+
+                    itemExistente.quantidade >=
+
+                    produto.estoque[tamanho]
+
+                ) {
+
+
+
+                    mostrarAviso(
+
+                        "Você atingiu o limite do estoque."
+
+                    );
+
+
+
+                    return;
+
+
+
+                }
+
+
+
+
+
+                itemExistente.quantidade++;
+
+
+
+            } else {
+
+
+
+                carrinho.push({
+
+
+
+                    produtoId: produtoId,
+
+
+
+                    tamanho: tamanho,
+
+
+
+                    quantidade: 1
+
+
+
+                });
+
+
+
+            }
+
+
+
+
+
+            atualizarCarrinho();
+
+
+
+
+
+            mostrarAviso(
+
+                produto.nome +
+
+                " adicionado ao carrinho!"
+
+            );
+
+
+
+
+
+            /*
+
+              IMPORTANTE:
+
+
+
+              NÃO abrimos o carrinho aqui.
+
+
+
+              Assim o cliente continua na página.
+
+            */
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           ABRIR CARRINHO
+
+        ================================================= */
+
+
+
+        function abrirCarrinho() {
+
+
+
+            document
+
+                .getElementById("carrinho")
+
+                .classList
+
+                .add("open");
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           FECHAR CARRINHO
+
+        ================================================= */
+
+
+
+        function fecharCarrinho() {
+
+
+
+            document
+
+                .getElementById("carrinho")
+
+                .classList
+
+                .remove("open");
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           AUMENTAR QUANTIDADE
+
+        ================================================= */
+
+
+
+        function aumentarQuantidade(
+
+            produtoId,
+
+            tamanho
+
+        ) {
+
+
+
+            const produto =
+
+                produtos.find(
+
+                    p => p.id === produtoId
+
+                );
+
+
+
+
+
+            const item =
+
+                carrinho.find(
+
+                    i =>
+
+                        i.produtoId === produtoId &&
+
+                        i.tamanho === tamanho
+
+                );
+
+
+
+
+
+            if (!produto || !item) {
+
+                return;
+
+            }
+
+
+
+
+
+            if (
+
+                item.quantidade >=
+
+                produto.estoque[tamanho]
+
+            ) {
+
+
+
+                mostrarAviso(
+
+                    "Não há mais unidades disponíveis."
+
+                );
+
+
+
+                return;
+
+
+
+            }
+
+
+
+
+
+            item.quantidade++;
+
+
+
+            atualizarCarrinho();
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           DIMINUIR QUANTIDADE
+
+        ================================================= */
+
+
+
+        function diminuirQuantidade(
+
+            produtoId,
+
+            tamanho
+
+        ) {
+
+
+
+            const item =
+
+                carrinho.find(
+
+                    i =>
+
+                        i.produtoId === produtoId &&
+
+                        i.tamanho === tamanho
+
+                );
+
+
+
+
+
+            if (!item) {
+
+                return;
+
+            }
+
+
+
+
+
+            item.quantidade--;
+
+
+
+
+
+            if (item.quantidade <= 0) {
+
+
+
+                carrinho =
+
+                    carrinho.filter(
+
+                        i =>
+
+                            !(
+
+                                i.produtoId === produtoId &&
+
+                                i.tamanho === tamanho
+
+                            )
+
+                    );
+
+
+
+            }
+
+
+
+
+
+            atualizarCarrinho();
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           REMOVER PRODUTO
+
+        ================================================= */
+
+
+
+        function removerProduto(
+
+            produtoId,
+
+            tamanho
+
+        ) {
+
+
+
+            carrinho =
+
+                carrinho.filter(
+
+                    item =>
+
+                        !(
+
+                            item.produtoId === produtoId &&
+
+                            item.tamanho === tamanho
+
+                        )
+
+                );
+
+
+
+
+
+            atualizarCarrinho();
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           ATUALIZAR CARRINHO
+
+        ================================================= */
+
+
+
+        function atualizarCarrinho() {
+
+
+
+            const lista =
+
+                document.getElementById(
+
+                    "itensCarrinho"
+
+                );
+
+
+
+
+
+            const quantidadeElemento =
+
+                document.getElementById(
+
+                    "quantidade"
+
+                );
+
+
+
+
+
+            const totalElemento =
+
+                document.getElementById(
+
+                    "total"
+
+                );
+
+
+
+
+
+            let quantidadeTotal = 0;
+
+
+
+            let valorTotal = 0;
+
+
+
+
+
+            carrinho.forEach(function(item) {
+
+
+
+                const produto =
+
+                    produtos.find(
+
+                        p => p.id === item.produtoId
+
+                    );
+
+
+
+
+
+                if (!produto) {
+
+                    return;
+
+                }
+
+
+
+
+
+                quantidadeTotal +=
+
+                    item.quantidade;
+
+
+
+
+
+                valorTotal +=
+
+                    produto.preco *
+
+                    item.quantidade;
+
+
+
+            });
+
+
+
+
+
+            quantidadeElemento.textContent =
+
+                quantidadeTotal;
+
+
+
+
+
+            totalElemento.textContent =
+
+                formatarPreco(
+
+                    valorTotal
+
+                );
+
+
+
+
+
+            if (carrinho.length === 0) {
+
+
+
+                lista.innerHTML = `
+
+
+
+                    <p style="
+
+                        color:#999;
+
+                        margin-top:20px;
+
+                    ">
+
+
+
+                        Seu carrinho está vazio.
+
+
+
+                    </p>
+
+
+
+                `;
+
+
+
+                return;
+
+
+
+            }
+
+
+
+
+
+            lista.innerHTML = "";
+
+
+
+
+
+            carrinho.forEach(function(item) {
+
+
+
+                const produto =
+
+                    produtos.find(
+
+                        p => p.id === item.produtoId
+
+                    );
+
+
+
+
+
+                if (!produto) {
+
+                    return;
+
+                }
+
+
+
+
+
+                const subtotal =
+
+                    produto.preco *
+
+                    item.quantidade;
+
+
+
+
+
+                lista.innerHTML += `
+
+
+
+                    <div class="cart-item">
+
+
+
+                        <strong>
+
+                            ${produto.nome}
+
+                        </strong>
+
+
+
+
+
+                        <div class="cart-item-size">
+
+
+
+                            Tamanho:
+
+                            ${item.tamanho}
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="cart-item-price">
+
+
+
+                            R$
+
+                            ${formatarPreco(subtotal)}
+
+
+
+                        </div>
+
+
+
+
+
+                        <div class="cart-actions">
+
+
+
+                            <button
+
+                                class="quantity-button"
+
+                                onclick="
+
+                                    diminuirQuantidade(
+
+                                        ${item.produtoId},
+
+                                        '${item.tamanho}'
+
+                                    )
+
+                                ">
+
+
+
+                                −
+
+
+
+                            </button>
+
+
+
+
+
+                            <span class="quantity">
+
+
+
+                                ${item.quantidade}
+
+
+
+                            </span>
+
+
+
+
+
+                            <button
+
+                                class="quantity-button"
+
+                                onclick="
+
+                                    aumentarQuantidade(
+
+                                        ${item.produtoId},
+
+                                        '${item.tamanho}'
+
+                                    )
+
+                                ">
+
+
+
+                                +
+
+
+
+                            </button>
+
+
+
+
+
+                            <button
+
+                                class="remove-button"
+
+                                onclick="
+
+                                    removerProduto(
+
+                                        ${item.produtoId},
+
+                                        '${item.tamanho}'
+
+                                    )
+
+                                ">
+
+
+
+                                🗑️
+
+
+
+                            </button>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                `;
+
+
+
+            });
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           FINALIZAR PEDIDO
+
+        ================================================= */
+
+
+
+        function finalizarPedido() {
+
+
+
+            if (carrinho.length === 0) {
+
+
+
+                mostrarAviso(
+
+                    "Seu carrinho está vazio!"
+
+                );
+
+
+
+                return;
+
+
+
+            }
+
+
+
+
+
+            let mensagem =
+
+                "Olá! Quero fazer um pedido na Lvss.treet.%0A%0A";
+
+
+
+
+
+            let total = 0;
+
+
+
+
+
+            carrinho.forEach(function(item) {
+
+
+
+                const produto =
+
+                    produtos.find(
+
+                        p => p.id === item.produtoId
+
+                    );
+
+
+
+
+
+                if (!produto) {
+
+                    return;
+
+                }
+
+
+
+
+
+                const subtotal =
+
+                    produto.preco *
+
+                    item.quantidade;
+
+
+
+
+
+                mensagem +=
+
+                    "• " +
+
+                    produto.nome +
+
+                    "%0A" +
+
+
+
+                    "Tamanho: " +
+
+                    item.tamanho +
+
+                    "%0A" +
+
+
+
+                    "Quantidade: " +
+
+                    item.quantidade +
+
+                    "%0A" +
+
+
+
+                    "Preço: R$ " +
+
+                    formatarPreco(subtotal) +
+
+                    "%0A%0A";
+
+
+
+
+
+                total += subtotal;
+
+
+
+            });
+
+
+
+
+
+            mensagem +=
+
+                "*Total: R$ " +
+
+                formatarPreco(total) +
+
+                "*";
+
+
+
+
+
+            window.open(
+
+
+
+                "https://wa.me/" +
+
+                whatsappNumero +
+
+                "?text=" +
+
+                mensagem,
+
+
+
+                "_blank"
+
+
+
+            );
+
+
+
+        }
+
+
+
+
+
+        /* =================================================
+
+           CONFIGURAR INSTAGRAM
+
+        ================================================= */
+
+
+
+        document.getElementById(
+
+            "instagram"
+
+        ).href =
+
+            "https://www.instagram.com/" +
+
+            instagramNome +
+
+            "/";
+
+
+
+
+
+        /* =================================================
+
+           CONFIGURAR WHATSAPP
+
+        ================================================= */
+
+
+
+        document.getElementById(
+
+            "whatsapp"
+
+        ).href =
+
+            "https://wa.me/" +
+
+            whatsappNumero;
+
+
+
+
+
+        /* =================================================
+
+           INICIAR
+
+        ================================================= */
+
+
+
+        mostrarProdutos();
+
+
+
+        atualizarCarrinho();
+
+
+
+    </script>
+
+
+
 </body>
+
+
+
 </html>
+
+```
