@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -9,7 +8,6 @@
     <title>Lvss.treet | Streetwear</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -26,10 +24,6 @@
             color: #ffffff;
         }
 
-        /* =========================
-           CORES
-        ========================= */
-
         :root {
             --roxo: #7b2cff;
             --roxo-escuro: #4b1599;
@@ -43,23 +37,14 @@
             --vermelho: #ff3b3b;
         }
 
-
-        /* =========================
-           CABEÇALHO
-        ========================= */
-
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-
             background: rgba(7, 7, 7, 0.96);
             backdrop-filter: blur(10px);
-
             border-bottom: 1px solid var(--borda);
-
             padding: 18px 6%;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -96,15 +81,10 @@
             border: none;
             background: var(--roxo);
             color: white;
-
             padding: 11px 16px;
-
             border-radius: 8px;
-
             cursor: pointer;
-
             font-weight: bold;
-
             transition: 0.2s;
         }
 
@@ -113,29 +93,14 @@
             transform: translateY(-2px);
         }
 
-
-        /* =========================
-           HERO
-        ========================= */
-
         .hero {
             min-height: 78vh;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             text-align: center;
-
             padding: 40px 20px;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    #35106b 0%,
-                    #160827 30%,
-                    #070707 70%
-                );
+            background: radial-gradient(circle at center, #35106b 0%, #160827 30%, #070707 70%);
         }
 
         .hero h1 {
@@ -157,18 +122,12 @@
 
         .button {
             display: inline-block;
-
             background: var(--roxo);
             color: white;
-
             padding: 14px 28px;
-
             border-radius: 8px;
-
             text-decoration: none;
-
             font-weight: bold;
-
             transition: 0.2s;
         }
 
@@ -176,11 +135,6 @@
             background: var(--roxo-claro);
             transform: translateY(-2px);
         }
-
-
-        /* =========================
-           SEÇÕES
-        ========================= */
 
         section {
             padding: 80px 6%;
@@ -200,29 +154,17 @@
             margin-top: 10px;
         }
 
-
-        /* =========================
-           PRODUTOS
-        ========================= */
-
         .products {
             display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(240px, 1fr));
-
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 25px;
         }
 
         .product {
             background: var(--card);
-
             border: 1px solid var(--borda);
-
             border-radius: 12px;
-
             overflow: hidden;
-
             transition: 0.3s;
         }
 
@@ -235,11 +177,8 @@
         .product img {
             width: 100%;
             height: 300px;
-
             object-fit: cover;
-
             display: block;
-
             background: #181818;
         }
 
@@ -260,18 +199,10 @@
 
         .price {
             color: var(--roxo-claro);
-
             font-size: 22px;
-
             font-weight: bold;
-
             margin-bottom: 16px;
         }
-
-
-        /* =========================
-           TAMANHOS
-        ========================= */
 
         .size-title {
             font-size: 14px;
@@ -289,17 +220,11 @@
         .size-button {
             background: #1b1b1b;
             color: white;
-
             border: 1px solid #444;
-
             padding: 8px 13px;
-
             border-radius: 6px;
-
             cursor: pointer;
-
             font-weight: bold;
-
             transition: 0.2s;
         }
 
@@ -324,28 +249,15 @@
             margin-bottom: 12px;
         }
 
-
-        /* =========================
-           BOTÃO ADICIONAR
-        ========================= */
-
         .add-button {
             width: 100%;
-
             border: none;
-
             background: var(--roxo);
-
             color: white;
-
             padding: 12px;
-
             border-radius: 7px;
-
             cursor: pointer;
-
             font-weight: bold;
-
             transition: 0.2s;
         }
 
@@ -359,11 +271,6 @@
             cursor: not-allowed;
         }
 
-
-        /* =========================
-           SOBRE
-        ========================= */
-
         .about {
             background: #0d0d0d;
             text-align: center;
@@ -371,20 +278,11 @@
 
         .about p {
             max-width: 750px;
-
             margin: auto;
-
             color: #aaa;
-
             line-height: 1.8;
-
             font-size: 16px;
         }
-
-
-        /* =========================
-           CONTATO
-        ========================= */
 
         .contact {
             text-align: center;
@@ -392,13 +290,9 @@
 
         .contact-buttons {
             display: flex;
-
             justify-content: center;
-
             gap: 15px;
-
             flex-wrap: wrap;
-
             margin-top: 25px;
         }
 
@@ -414,18 +308,10 @@
             background: var(--roxo);
         }
 
-
-        /* =========================
-           RODAPÉ
-        ========================= */
-
         footer {
             border-top: 1px solid var(--borda);
-
             padding: 30px;
-
             text-align: center;
-
             color: #777;
         }
 
@@ -433,33 +319,18 @@
             color: var(--roxo-claro);
         }
 
-
-        /* =========================
-           CARRINHO
-        ========================= */
-
         .cart {
             position: fixed;
-
             top: 0;
             right: -430px;
-
             width: 420px;
             max-width: 100%;
-
             height: 100vh;
-
             background: #101010;
-
             z-index: 2000;
-
             padding: 25px;
-
             transition: 0.4s;
-
-            box-shadow:
-                -10px 0 40px rgba(0,0,0,0.6);
-
+            box-shadow: -10px 0 40px rgba(0,0,0,0.6);
             overflow-y: auto;
         }
 
@@ -469,13 +340,9 @@
 
         .cart-header {
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
             border-bottom: 1px solid #333;
-
             padding-bottom: 15px;
         }
 
@@ -485,13 +352,9 @@
 
         .close-button {
             background: none;
-
             border: none;
-
             color: white;
-
             font-size: 32px;
-
             cursor: pointer;
         }
 
@@ -501,13 +364,9 @@
 
         .cart-item {
             background: #1a1a1a;
-
             padding: 15px;
-
             border-radius: 8px;
-
             margin-bottom: 10px;
-
             border: 1px solid #292929;
         }
 
@@ -537,17 +396,11 @@
         .quantity-button {
             width: 30px;
             height: 30px;
-
             border: none;
-
             background: var(--roxo);
-
             color: white;
-
             border-radius: 5px;
-
             cursor: pointer;
-
             font-weight: bold;
         }
 
@@ -558,17 +411,11 @@
 
         .remove-button {
             margin-left: auto;
-
             background: #333;
-
             border: none;
-
             color: white;
-
             padding: 7px 10px;
-
             border-radius: 5px;
-
             cursor: pointer;
         }
 
@@ -578,35 +425,22 @@
 
         .total {
             margin-top: 25px;
-
             padding-top: 20px;
-
             border-top: 1px solid #333;
-
             font-size: 22px;
-
             font-weight: bold;
         }
 
         .checkout {
             width: 100%;
-
             margin-top: 20px;
-
             padding: 14px;
-
             background: var(--verde);
-
             color: white;
-
             border: none;
-
             border-radius: 7px;
-
             cursor: pointer;
-
             font-weight: bold;
-
             font-size: 15px;
         }
 
@@ -614,33 +448,18 @@
             background: #20bd5b;
         }
 
-
-        /* =========================
-           AVISO
-        ========================= */
-
         .notice {
             position: fixed;
-
             bottom: 25px;
             left: 50%;
-
             transform: translateX(-50%) translateY(100px);
-
             background: #181818;
-
             border: 1px solid var(--roxo);
-
             color: white;
-
             padding: 14px 20px;
-
             border-radius: 8px;
-
             z-index: 5000;
-
             opacity: 0;
-
             transition: 0.3s;
         }
 
@@ -649,1339 +468,379 @@
             opacity: 1;
         }
 
-
-        /* =========================
-           CELULAR
-        ========================= */
-
         @media (max-width: 700px) {
-
-            nav {
-                display: none;
-            }
-
-            header {
-                padding: 16px 5%;
-            }
-
-            .logo {
-                font-size: 22px;
-            }
-
-            .cart-button {
-                padding: 9px 12px;
-            }
-
-            section {
-                padding: 60px 5%;
-            }
-
-            .title h2 {
-                font-size: 30px;
-            }
-
-            .hero {
-                min-height: 70vh;
-            }
-
-            .hero p {
-                font-size: 14px;
-            }
-
-            .cart {
-                width: 100%;
-            }
-
-            .product img {
-                height: 280px;
-            }
+            nav { display: none; }
+            header { padding: 16px 5%; }
+            .logo { font-size: 22px; }
+            .cart-button { padding: 9px 12px; }
+            section { padding: 60px 5%; }
+            .title h2 { font-size: 30px; }
+            .hero { min-height: 70vh; }
+            .hero p { font-size: 14px; }
+            .cart { width: 100%; }
+            .product img { height: 280px; }
         }
-
     </style>
 </head>
 
-
 <body>
 
-
-    <!-- =========================
-         CABEÇALHO
-    ========================== -->
-
     <header>
-
-        <div class="logo">
-            Lvss<span>.treet</span>
-        </div>
-
+        <div class="logo">Lvss<span>.treet</span></div>
         <nav>
             <a href="#inicio">Início</a>
             <a href="#produtos">Produtos</a>
             <a href="#sobre">Sobre</a>
             <a href="#contato">Contato</a>
         </nav>
-
-        <button
-            class="cart-button"
-            onclick="abrirCarrinho()">
-
-            🛒 Carrinho
-            (<span id="quantidade">0</span>)
-
+        <button class="cart-button" onclick="abrirCarrinho()">
+            🛒 Carrinho (<span id="quantidade">0</span>)
         </button>
-
     </header>
 
-
-    <!-- =========================
-         INÍCIO
-    ========================== -->
-
-    <section
-        class="hero"
-        id="inicio">
-
+    <section class="hero" id="inicio">
         <div>
-
-            <h1>
-                LVSS<span>.TREET</span>
-            </h1>
-
-            <p>
-                STREETWEAR • ATITUDE • PERSONALIDADE
-            </p>
-
-            <a
-                href="#produtos"
-                class="button">
-
-                VER PRODUTOS
-
-            </a>
-
+            <h1>LVSS<span>.TREET</span></h1>
+            <p>STREETWEAR • ATITUDE • PERSONALIDADE</p>
+            <a href="#produtos" class="button">VER PRODUTOS</a>
         </div>
-
     </section>
-
-
-    <!-- =========================
-         PRODUTOS
-    ========================== -->
 
     <section id="produtos">
-
         <div class="title">
-
-            <h2>
-                NOSSOS PRODUTOS
-            </h2>
-
-            <p>
-                Escolha seu produto e tamanho.
-            </p>
-
+            <h2>NOSSOS PRODUTOS</h2>
+            <p>Escolha seu produto e tamanho.</p>
         </div>
-
-        <div
-            class="products"
-            id="listaProdutos">
-        </div>
-
+        <div class="products" id="listaProdutos"></div>
     </section>
 
-
-    <!-- =========================
-         SOBRE
-    ========================== -->
-
-    <section
-        class="about"
-        id="sobre">
-
+    <section class="about" id="sobre">
         <div class="title">
-
-            <h2>
-                SOBRE A LVSS.TREET
-            </h2>
-
+            <h2>SOBRE A LVSS.TREET</h2>
         </div>
-
         <p>
-
-            A Lvss.treet nasceu com a ideia de criar
-            uma marca streetwear com atitude,
-            personalidade e estilo próprio.
-
-            Nosso objetivo é trazer produtos
-            que representem personalidade,
-            estilo e autenticidade.
-
+            A Lvss.treet nasceu com a ideia de criar uma marca streetwear com atitude,
+            personalidade e estilo próprio. Nosso objetivo é trazer produtos
+            que representem personalidade, estilo e autenticidade.
         </p>
-
     </section>
 
-
-    <!-- =========================
-         CONTATO
-    ========================== -->
-
-    <section
-        class="contact"
-        id="contato">
-
+    <section class="contact" id="contato">
         <div class="title">
-
-            <h2>
-                FALE CONOSCO
-            </h2>
-
-            <p>
-                Entre em contato com a Lvss.treet.
-            </p>
-
+            <h2>FALE CONOSCO</h2>
+            <p>Entre em contato com a Lvss.treet.</p>
         </div>
-
         <div class="contact-buttons">
-
-            <a
-                id="whatsapp"
-                class="button whatsapp"
-                target="_blank">
-
-                📱 WHATSAPP
-
-            </a>
-
-            <a
-                id="instagram"
-                class="button instagram"
-                target="_blank">
-
-                📸 INSTAGRAM
-
-            </a>
-
+            <a id="whatsapp" class="button whatsapp" target="_blank">📱 WHATSAPP</a>
+            <a id="instagram" class="button instagram" target="_blank">📸 INSTAGRAM</a>
         </div>
-
     </section>
-
-
-    <!-- =========================
-         RODAPÉ
-    ========================== -->
 
     <footer>
-
-        © 2026
-
-        <span>
-            Lvss.treet
-        </span>
-
-        — Todos os direitos reservados.
-
+        © 2026 <span>Lvss.treet</span> — Todos os direitos reservados.
     </footer>
 
-
-    <!-- =========================
-         CARRINHO
-    ========================== -->
-
-    <div
-        class="cart"
-        id="carrinho">
-
+    <div class="cart" id="carrinho">
         <div class="cart-header">
-
-            <h2>
-                🛒 Carrinho
-            </h2>
-
-            <button
-                class="close-button"
-                onclick="fecharCarrinho()">
-
-                ×
-
-            </button>
-
+            <h2>🛒 Carrinho</h2>
+            <button class="close-button" onclick="fecharCarrinho()">×</button>
         </div>
-
-
-        <div
-            class="cart-items"
-            id="itensCarrinho">
-
-            <p style="color:#999;margin-top:20px;">
-
-                Seu carrinho está vazio.
-
-            </p>
-
+        <div class="cart-items" id="itensCarrinho">
+            <p style="color:#999;margin-top:20px;">Seu carrinho está vazio.</p>
         </div>
-
-
         <div class="total">
-
-            Total:
-
-            R$
-
-            <span id="total">
-                0,00
-            </span>
-
+            Total: R$ <span id="total">0,00</span>
         </div>
-
-
-        <button
-            class="checkout"
-            onclick="finalizarPedido()">
-
-            📲 FINALIZAR PEDIDO
-
-        </button>
-
+        <button class="checkout" onclick="finalizarPedido()">📲 FINALIZAR PEDIDO</button>
     </div>
 
-
-    <!-- AVISO -->
-
-    <div
-        class="notice"
-        id="notice">
-
-    </div>
-
+    <div class="notice" id="notice"></div>
 
     <script>
-
-
-        /* =================================================
-           CONFIGURAÇÕES
-        ================================================= */
-
         const whatsappNumero = "554991221247";
-
         const instagramNome = "lvss.treet";
 
-
-        /* =================================================
-           PRODUTOS
-
-           IMPORTANTE:
-
-           Para imagens da sua pasta:
-
-           imagens/nome-da-imagem.jpg
-
-           Exemplo:
-
-           imagens/bone-nike.jpg
-
-        ================================================= */
+        document.getElementById("whatsapp").href = `https://wa.me/${whatsappNumero}`;
+        document.getElementById("instagram").href = `https://instagram.com/${instagramNome}`;
 
         const produtos = [
-
             {
                 id: 1,
-
                 nome: "Moletom Nike Nsw Club Ft Official Preto",
-
                 descricao: "Moletom Nike estilo streetwear.",
-
                 preco: 89.90,
-
                 imagem: "imagens/moletom-nike.jpg",
-
                 tamanhos: ["P", "M", "G", "GG"],
-
-                estoque: {
-                    P: 5,
-                    M: 10,
-                    G: 8,
-                    GG: 4
-                }
+                estoque: { P: 5, M: 10, G: 8, GG: 4 }
             },
-
-
             {
                 id: 2,
-
                 nome: "Camiseta Lvss Purple",
-
                 descricao: "Edição especial roxa.",
-
                 preco: 99.90,
-
                 imagem: "https://placehold.co/600x600/35105c/ffffff?text=LVSS+PURPLE",
-
                 tamanhos: ["P", "M", "G", "GG"],
-
-                estoque: {
-                    P: 5,
-                    M: 10,
-                    G: 8,
-                    GG: 4
-                }
+                estoque: { P: 5, M: 10, G: 8, GG: 4 }
             },
-
-
             {
                 id: 3,
-
                 nome: "Moletom Lvss",
-
                 descricao: "Moletom streetwear.",
-
                 preco: 159.90,
-
                 imagem: "https://placehold.co/600x600/181818/ffffff?text=LVSS+HOODIE",
-
                 tamanhos: ["P", "M", "G", "GG"],
-
-                estoque: {
-                    P: 3,
-                    M: 7,
-                    G: 5,
-                    GG: 3
-                }
+                estoque: { P: 3, M: 7, G: 5, GG: 3 }
             },
-
-
             {
                 id: 4,
-
                 nome: "Boné Lvss",
-
                 descricao: "Boné streetwear.",
-
                 preco: 79.90,
-
                 imagem: "imagens/bone-nike.jpg",
-
                 tamanhos: ["Único"],
-
-                estoque: {
-                    "Único": 10
-                }
+                estoque: { "Único": 10 }
             },
-
-
             {
                 id: 5,
-
                 nome: "Tênis Lvss Street",
-
                 descricao: "Tênis para completar o visual.",
-
                 preco: 249.90,
-
                 imagem: "https://placehold.co/600x600/252525/ffffff?text=LVSS+SNEAKER",
-
                 tamanhos: ["P", "M", "G", "GG"],
-
-                estoque: {
-                    P: 2,
-                    M: 5,
-                    G: 4,
-                    GG: 2
-                }
+                estoque: { P: 2, M: 5, G: 4, GG: 2 }
             }
-
         ];
 
-
-        /* =================================================
-           CARRINHO
-        ================================================= */
-
         let carrinho = [];
-
-
-        /* Tamanhos escolhidos */
-
         let tamanhosSelecionados = {};
 
-
-        /* =================================================
-           FORMATAR PREÇO
-        ================================================= */
-
         function formatarPreco(valor) {
-
-            return valor
-                .toFixed(2)
-                .replace(".", ",");
-
+            return valor.toFixed(2).replace(".", ",");
         }
-
-
-        /* =================================================
-           AVISO
-        ================================================= */
 
         function mostrarAviso(texto) {
-
-            const aviso =
-                document.getElementById("notice");
-
+            const aviso = document.getElementById("notice");
             aviso.textContent = texto;
-
             aviso.classList.add("show");
-
-            setTimeout(function() {
-
-                aviso.classList.remove("show");
-
-            }, 2500);
-
+            setTimeout(() => aviso.classList.remove("show"), 2500);
         }
-
-
-        /* =================================================
-           MOSTRAR PRODUTOS
-        ================================================= */
 
         function mostrarProdutos() {
-
-            const lista =
-                document.getElementById("listaProdutos");
-
+            const lista = document.getElementById("listaProdutos");
             lista.innerHTML = "";
 
-
-            produtos.forEach(function(produto) {
-
-                tamanhosSelecionados[produto.id] =
-                    produto.tamanhos[0];
-
+            produtos.forEach(produto => {
+                tamanhosSelecionados[produto.id] = produto.tamanhos[0];
 
                 let tamanhosHTML = "";
-
-
-                produto.tamanhos.forEach(function(tamanho) {
-
-                    const estoque =
-                        produto.estoque[tamanho];
-
-                    const semEstoque =
-                        estoque <= 0;
-
+                produto.tamanhos.forEach(tamanho => {
+                    const estoque = produto.estoque[tamanho];
+                    const semEstoque = estoque <= 0;
 
                     tamanhosHTML += `
-
-                        <button
-                            type="button"
-                            class="size-button
-                            ${tamanho === produto.tamanhos[0] ? "selected" : ""}
-                            ${semEstoque ? "disabled" : ""}"
-
+                        <button type="button" 
+                            class="size-button ${tamanho === produto.tamanhos[0] ? "selected" : ""} ${semEstoque ? "disabled" : ""}"
                             ${semEstoque ? "disabled" : ""}
-
-                            onclick="
-                                selecionarTamanho(
-                                    ${produto.id},
-                                    '${tamanho}'
-                                )
-                            ">
-
+                            onclick="selecionarTamanho(${produto.id}, '${tamanho}')">
                             ${tamanho}
-
                         </button>
-
                     `;
-
                 });
 
-
-                const primeiroTamanho =
-                    produto.tamanhos[0];
-
-
-                const estoqueInicial =
-                    produto.estoque[primeiroTamanho];
-
+                const primeiroTamanho = produto.tamanhos[0];
+                const estoqueInicial = produto.estoque[primeiroTamanho];
 
                 lista.innerHTML += `
-
                     <div class="product">
-
-                        <img
-                            src="${produto.imagem}"
-                            alt="${produto.nome}"
-                            onerror="this.src='https://placehold.co/600x600/111111/ffffff?text=SEM+IMAGEM'"
-                        >
-
+                        <img src="${produto.imagem}" alt="${produto.nome}" onerror="this.src='https://placehold.co/600x600/111111/ffffff?text=SEM+IMAGEM'">
                         <div class="product-info">
-
-                            <h3>
-                                ${produto.nome}
-                            </h3>
-
-                            <p>
-                                ${produto.descricao}
-                            </p>
-
-                            <div class="price">
-
-                                R$
-                                ${formatarPreco(produto.preco)}
-
-                            </div>
-
-
-                            <div class="size-title">
-
-                                TAMANHO:
-
-                            </div>
-
-
-                            <div
-                                class="sizes"
-                                id="tamanhos-${produto.id}">
-
-                                ${tamanhosHTML}
-
-                            </div>
-
-
-                            <div
-                                class="stock"
-                                id="estoque-${produto.id}">
-
-                                Estoque:
-                                ${estoqueInicial}
-                                unidade(s)
-
-                            </div>
-
-
-                            <button
-                                class="add-button"
-
-                                id="add-${produto.id}"
-
-                                onclick="
-                                    adicionarProduto(
-                                        ${produto.id}
-                                    )
-                                ">
-
-                                ADICIONAR AO CARRINHO
-
-                            </button>
-
+                            <h3>${produto.nome}</h3>
+                            <p>${produto.descricao}</p>
+                            <div class="price">R$ ${formatarPreco(produto.preco)}</div>
+                            <div class="size-title">TAMANHO:</div>
+                            <div class="sizes" id="tamanhos-${produto.id}">${tamanhosHTML}</div>
+                            <div class="stock" id="estoque-${produto.id}">Estoque: ${estoqueInicial} unidade(s)</div>
+                            <button class="add-button" id="add-${produto.id}" onclick="adicionarProduto(${produto.id})">ADICIONAR AO CARRINHO</button>
                         </div>
-
                     </div>
-
                 `;
-
             });
-
         }
 
-
-        /* =================================================
-           SELECIONAR TAMANHO
-        ================================================= */
-
-        function selecionarTamanho(
-            produtoId,
-            tamanho
-        ) {
-
-            const produto =
-                produtos.find(
-                    p => p.id === produtoId
-                );
-
-
-            if (!produto) {
-                return;
-            }
-
+        function selecionarTamanho(produtoId, tamanho) {
+            const produto = produtos.find(p => p.id === produtoId);
+            if (!produto) return;
 
             if (produto.estoque[tamanho] <= 0) {
-
-                mostrarAviso(
-                    "Esse tamanho está esgotado."
-                );
-
+                mostrarAviso("Esse tamanho está esgotado.");
                 return;
             }
 
+            tamanhosSelecionados[produtoId] = tamanho;
 
-            tamanhosSelecionados[produtoId] =
-                tamanho;
+            const container = document.getElementById("tamanhos-" + produtoId);
+            const botoes = container.querySelectorAll(".size-button");
 
-
-            const container =
-                document.getElementById(
-                    "tamanhos-" + produtoId
-                );
-
-
-            const botoes =
-                container.querySelectorAll(
-                    ".size-button"
-                );
-
-
-            botoes.forEach(function(botao) {
-
-                botao.classList.remove(
-                    "selected"
-                );
-
-            });
-
-
-            botoes.forEach(function(botao) {
-
-                if (
-                    botao.textContent.trim()
-                    === tamanho
-                ) {
-
-                    botao.classList.add(
-                        "selected"
-                    );
-
+            botoes.forEach(botao => botao.classList.remove("selected"));
+            botoes.forEach(botao => {
+                if (botao.textContent.trim() === tamanho) {
+                    botao.classList.add("selected");
                 }
-
             });
 
-
-            atualizarEstoqueVisual(
-                produtoId
-            );
-
+            atualizarEstoqueVisual(produtoId);
         }
 
+        function atualizarEstoqueVisual(produtoId) {
+            const produto = produtos.find(p => p.id === produtoId);
+            if (!produto) return;
 
-        /* =================================================
-           ATUALIZAR ESTOQUE VISUAL
-        ================================================= */
+            const tamanho = tamanhosSelecionados[produtoId];
+            const quantidade = produto.estoque[tamanho];
 
-        function atualizarEstoqueVisual(
-            produtoId
-        ) {
+            document.getElementById("estoque-" + produtoId).textContent = `Estoque: ${quantidade} unidade(s)`;
 
-            const produto =
-                produtos.find(
-                    p => p.id === produtoId
-                );
-
-
-            if (!produto) {
-                return;
-            }
-
-
-            const tamanho =
-                tamanhosSelecionados[produtoId];
-
-
-            const quantidade =
-                produto.estoque[tamanho];
-
-
-            document.getElementById(
-                "estoque-" + produtoId
-            ).textContent =
-                "Estoque: " +
-                quantidade +
-                " unidade(s)";
-
-
-            const botao =
-                document.getElementById(
-                    "add-" + produtoId
-                );
-
-
+            const botao = document.getElementById("add-" + produtoId);
             if (quantidade <= 0) {
-
                 botao.disabled = true;
-
-                botao.textContent =
-                    "TAMANHO ESGOTADO";
-
+                botao.textContent = "TAMANHO ESGOTADO";
             } else {
-
                 botao.disabled = false;
-
-                botao.textContent =
-                    "ADICIONAR AO CARRINHO";
-
+                botao.textContent = "ADICIONAR AO CARRINHO";
             }
-
         }
 
+        function adicionarProduto(produtoId) {
+            const produto = produtos.find(p => p.id === produtoId);
+            if (!produto) return;
 
-        /* =================================================
-           ADICIONAR AO CARRINHO
-        ================================================= */
-
-        function adicionarProduto(
-            produtoId
-        ) {
-
-            const produto =
-                produtos.find(
-                    p => p.id === produtoId
-                );
-
-
-            if (!produto) {
-                return;
-            }
-
-
-            const tamanho =
-                tamanhosSelecionados[produtoId];
-
+            const tamanho = tamanhosSelecionados[produtoId];
 
             if (!tamanho) {
-
-                mostrarAviso(
-                    "Escolha um tamanho."
-                );
-
+                mostrarAviso("Escolha um tamanho.");
                 return;
-
             }
-
 
             if (produto.estoque[tamanho] <= 0) {
-
-                mostrarAviso(
-                    "Esse tamanho está esgotado."
-                );
-
+                mostrarAviso("Esse tamanho está esgotado.");
                 return;
-
             }
 
-
-            const itemExistente =
-                carrinho.find(
-                    item =>
-                        item.produtoId === produtoId &&
-                        item.tamanho === tamanho
-                );
-
+            const itemExistente = carrinho.find(item => item.produtoId === produtoId && item.tamanho === tamanho);
 
             if (itemExistente) {
-
-                if (
-                    itemExistente.quantidade >=
-                    produto.estoque[tamanho]
-                ) {
-
-                    mostrarAviso(
-                        "Você atingiu o limite do estoque."
-                    );
-
+                if (itemExistente.quantidade >= produto.estoque[tamanho]) {
+                    mostrarAviso("Limite de estoque atingido para esse tamanho.");
                     return;
-
                 }
-
-
                 itemExistente.quantidade++;
-
             } else {
-
                 carrinho.push({
-
-                    produtoId: produtoId,
-
+                    produtoId: produto.id,
+                    nome: produto.nome,
+                    preco: produto.preco,
                     tamanho: tamanho,
-
                     quantidade: 1
-
                 });
-
             }
 
-
+            mostrarAviso("Produto adicionado ao carrinho!");
             atualizarCarrinho();
-
-
-            mostrarAviso(
-                produto.nome +
-                " adicionado ao carrinho!"
-            );
-
-
-            /*
-              IMPORTANTE:
-
-              NÃO abrimos o carrinho aqui.
-
-              Assim o cliente continua na página.
-            */
-
         }
 
+        function alterarQuantidade(produtoId, tamanho, delta) {
+            const item = carrinho.find(i => i.produtoId === produtoId && i.tamanho === tamanho);
+            const produto = produtos.find(p => p.id === produtoId);
 
-        /* =================================================
-           ABRIR CARRINHO
-        ================================================= */
+            if (!item || !produto) return;
 
-        function abrirCarrinho() {
-
-            document
-                .getElementById("carrinho")
-                .classList
-                .add("open");
-
-        }
-
-
-        /* =================================================
-           FECHAR CARRINHO
-        ================================================= */
-
-        function fecharCarrinho() {
-
-            document
-                .getElementById("carrinho")
-                .classList
-                .remove("open");
-
-        }
-
-
-        /* =================================================
-           AUMENTAR QUANTIDADE
-        ================================================= */
-
-        function aumentarQuantidade(
-            produtoId,
-            tamanho
-        ) {
-
-            const produto =
-                produtos.find(
-                    p => p.id === produtoId
-                );
-
-
-            const item =
-                carrinho.find(
-                    i =>
-                        i.produtoId === produtoId &&
-                        i.tamanho === tamanho
-                );
-
-
-            if (!produto || !item) {
+            if (delta > 0 && item.quantidade >= produto.estoque[tamanho]) {
+                mostrarAviso("Quantidade máxima de estoque atingida.");
                 return;
             }
 
-
-            if (
-                item.quantidade >=
-                produto.estoque[tamanho]
-            ) {
-
-                mostrarAviso(
-                    "Não há mais unidades disponíveis."
-                );
-
-                return;
-
-            }
-
-
-            item.quantidade++;
-
-            atualizarCarrinho();
-
-        }
-
-
-        /* =================================================
-           DIMINUIR QUANTIDADE
-        ================================================= */
-
-        function diminuirQuantidade(
-            produtoId,
-            tamanho
-        ) {
-
-            const item =
-                carrinho.find(
-                    i =>
-                        i.produtoId === produtoId &&
-                        i.tamanho === tamanho
-                );
-
-
-            if (!item) {
-                return;
-            }
-
-
-            item.quantidade--;
-
+            item.quantidade += delta;
 
             if (item.quantidade <= 0) {
-
-                carrinho =
-                    carrinho.filter(
-                        i =>
-                            !(
-                                i.produtoId === produtoId &&
-                                i.tamanho === tamanho
-                            )
-                    );
-
+                removerItem(produtoId, tamanho);
+            } else {
+                atualizarCarrinho();
             }
-
-
-            atualizarCarrinho();
-
         }
 
-
-        /* =================================================
-           REMOVER PRODUTO
-        ================================================= */
-
-        function removerProduto(
-            produtoId,
-            tamanho
-        ) {
-
-            carrinho =
-                carrinho.filter(
-                    item =>
-                        !(
-                            item.produtoId === produtoId &&
-                            item.tamanho === tamanho
-                        )
-                );
-
-
+        function removerItem(produtoId, tamanho) {
+            carrinho = carrinho.filter(i => !(i.produtoId === produtoId && i.tamanho === tamanho));
             atualizarCarrinho();
-
         }
-
-
-        /* =================================================
-           ATUALIZAR CARRINHO
-        ================================================= */
 
         function atualizarCarrinho() {
-
-            const lista =
-                document.getElementById(
-                    "itensCarrinho"
-                );
-
-
-            const quantidadeElemento =
-                document.getElementById(
-                    "quantidade"
-                );
-
-
-            const totalElemento =
-                document.getElementById(
-                    "total"
-                );
-
-
-            let quantidadeTotal = 0;
-
-            let valorTotal = 0;
-
-
-            carrinho.forEach(function(item) {
-
-                const produto =
-                    produtos.find(
-                        p => p.id === item.produtoId
-                    );
-
-
-                if (!produto) {
-                    return;
-                }
-
-
-                quantidadeTotal +=
-                    item.quantidade;
-
-
-                valorTotal +=
-                    produto.preco *
-                    item.quantidade;
-
-            });
-
-
-            quantidadeElemento.textContent =
-                quantidadeTotal;
-
-
-            totalElemento.textContent =
-                formatarPreco(
-                    valorTotal
-                );
-
-
-            if (carrinho.length === 0) {
-
-                lista.innerHTML = `
-
-                    <p style="
-                        color:#999;
-                        margin-top:20px;
-                    ">
-
-                        Seu carrinho está vazio.
-
-                    </p>
-
-                `;
-
-                return;
-
-            }
-
-
-            lista.innerHTML = "";
-
-
-            carrinho.forEach(function(item) {
-
-                const produto =
-                    produtos.find(
-                        p => p.id === item.produtoId
-                    );
-
-
-                if (!produto) {
-                    return;
-                }
-
-
-                const subtotal =
-                    produto.preco *
-                    item.quantidade;
-
-
-                lista.innerHTML += `
-
-                    <div class="cart-item">
-
-                        <strong>
-                            ${produto.nome}
-                        </strong>
-
-
-                        <div class="cart-item-size">
-
-                            Tamanho:
-                            ${item.tamanho}
-
-                        </div>
-
-
-                        <div class="cart-item-price">
-
-                            R$
-                            ${formatarPreco(subtotal)}
-
-                        </div>
-
-
-                        <div class="cart-actions">
-
-                            <button
-                                class="quantity-button"
-                                onclick="
-                                    diminuirQuantidade(
-                                        ${item.produtoId},
-                                        '${item.tamanho}'
-                                    )
-                                ">
-
-                                −
-
-                            </button>
-
-
-                            <span class="quantity">
-
-                                ${item.quantidade}
-
-                            </span>
-
-
-                            <button
-                                class="quantity-button"
-                                onclick="
-                                    aumentarQuantidade(
-                                        ${item.produtoId},
-                                        '${item.tamanho}'
-                                    )
-                                ">
-
-                                +
-
-                            </button>
-
-
-                            <button
-                                class="remove-button"
-                                onclick="
-                                    removerProduto(
-                                        ${item.produtoId},
-                                        '${item.tamanho}'
-                                    )
-                                ">
-
-                                🗑️
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                `;
-
-            });
-
-        }
-
-
-        /* =================================================
-           FINALIZAR PEDIDO
-        ================================================= */
-
-        function finalizarPedido() {
-
-            if (carrinho.length === 0) {
-
-                mostrarAviso(
-                    "Seu carrinho está vazio!"
-                );
-
-                return;
-
-            }
-
-
-            let mensagem =
-                "Olá! Quero fazer um pedido na Lvss.treet.%0A%0A";
-
+            const container = document.getElementById("itensCarrinho");
+            const totalElement = document.getElementById("total");
+            const qtdElement = document.getElementById("quantidade");
 
             let total = 0;
+            let totalItens = 0;
 
+            if (carrinho.length === 0) {
+                container.innerHTML = '<p style="color:#999;margin-top:20px;">Seu carrinho está vazio.</p>';
+            } else {
+                container.innerHTML = "";
+                carrinho.forEach(item => {
+                    const subtotal = item.preco * item.quantidade;
+                    total += subtotal;
+                    totalItens += item.quantidade;
 
-            carrinho.forEach(function(item) {
+                    container.innerHTML += `
+                        <div class="cart-item">
+                            <strong>${item.nome}</strong>
+                            <div class="cart-item-size">Tamanho: ${item.tamanho}</div>
+                            <div class="cart-item-price">R$ ${formatarPreco(subtotal)}</div>
+                            <div class="cart-actions">
+                                <button class="quantity-button" onclick="alterarQuantidade(${item.produtoId}, '${item.tamanho}', -1)">-</button>
+                                <span class="quantity">${item.quantidade}</span>
+                                <button class="quantity-button" onclick="alterarQuantidade(${item.produtoId}, '${item.tamanho}', 1)">+</button>
+                                <button class="remove-button" onclick="removerItem(${item.produtoId}, '${item.tamanho}')">Remover</button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
 
-                const produto =
-                    produtos.find(
-                        p => p.id === item.produtoId
-                    );
-
-
-                if (!produto) {
-                    return;
-                }
-
-
-                const subtotal =
-                    produto.preco *
-                    item.quantidade;
-
-
-                mensagem +=
-                    "• " +
-                    produto.nome +
-                    "%0A" +
-
-                    "Tamanho: " +
-                    item.tamanho +
-                    "%0A" +
-
-                    "Quantidade: " +
-                    item.quantidade +
-                    "%0A" +
-
-                    "Preço: R$ " +
-                    formatarPreco(subtotal) +
-                    "%0A%0A";
-
-
-                total += subtotal;
-
-            });
-
-
-            mensagem +=
-                "*Total: R$ " +
-                formatarPreco(total) +
-                "*";
-
-
-            window.open(
-
-                "https://wa.me/" +
-                whatsappNumero +
-                "?text=" +
-                mensagem,
-
-                "_blank"
-
-            );
-
+            totalElement.textContent = formatarPreco(total);
+            qtdElement.textContent = totalItens;
         }
 
+        function abrirCarrinho() {
+            document.getElementById("carrinho").classList.add("open");
+        }
 
-        /* =================================================
-           CONFIGURAR INSTAGRAM
-        ================================================= */
+        function fecharCarrinho() {
+            document.getElementById("carrinho").classList.remove("open");
+        }
 
-        document.getElementById(
-            "instagram"
-        ).href =
-            "https://www.instagram.com/" +
-            instagramNome +
-            "/";
+        function finalizarPedido() {
+            if (carrinho.length === 0) {
+                mostrarAviso("Seu carrinho está vazio!");
+                return;
+            }
 
+            let mensagem = "Olá! Gostaria de fazer o seguinte pedido na Lvss.treet:\n\n";
+            let total = 0;
 
-        /* =================================================
-           CONFIGURAR WHATSAPP
-        ================================================= */
+            carrinho.forEach(item => {
+                const subtotal = item.preco * item.quantidade;
+                total += subtotal;
+                mensagem += `• ${item.nome} (${item.tamanho}) - Qtd: ${item.quantidade} - R$ ${formatarPreco(subtotal)}\n`;
+            });
 
-        document.getElementById(
-            "whatsapp"
-        ).href =
-            "https://wa.me/" +
-            whatsappNumero;
+            mensagem += `\n*Total: R$ ${formatarPreco(total)}*`;
 
-
-        /* =================================================
-           INICIAR
-        ================================================= */
+            const link = `https://wa.me/${whatsappNumero}?text=${encodeURIComponent(mensagem)}`;
+            window.open(link, "_blank");
+        }
 
         mostrarProdutos();
-
-        atualizarCarrinho();
-
     </script>
-
 </body>
 
 </html>
-```
